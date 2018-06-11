@@ -1,2 +1,2 @@
 export { default } from "./Chord";
-export { IChordProps } from "./IChord";
+export { IChordProps } from "./types";
