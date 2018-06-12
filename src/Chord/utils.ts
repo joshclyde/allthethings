@@ -40,10 +40,10 @@ export const getChordString = (chord: string) => {
       return createString("C", 0, 0, 0, 3);
     case "G":
       return createString("G", 0, 2, 3, 2);
-    case "F":
-      return createString("F", 2, 0, 1, 0);
     case "Am":
       return createString("Am", 2, 0, 0, 0);
+    case "F":
+      return createString("F", 2, 0, 1, 0);
     default:
       return "";
   }
