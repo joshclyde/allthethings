@@ -4,10 +4,10 @@ import Chord from "./Chord";
 
 const App = () => (
   <div>
-    <Chord chord="C" />
-    <Chord chord="G" />
-    <Chord chord="Am" />
-    <Chord chord="F" />
+    <Chord />
+    <Chord />
+    <Chord />
+    <Chord />
   </div>
 );
 
