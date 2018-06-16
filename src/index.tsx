@@ -1,9 +1,24 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-
+import { Provider } from "react-redux";
+import { combineReducers, createStore } from "redux";
 import App from "./App";
+import { reducers as chordReducers } from "./Chord";
+
+const reducers = combineReducers({
+  chords: chordReducers,
+});
+
+const store = createStore(
+  reducers, /* preloadedState, */
+  // https://github.com/zalmoxisus/redux-devtools-extension#11-basic-store
+  // this line is so i can see the redux store
+  +  (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__(),
+);
 
 ReactDOM.render(
-  <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById("app"),
 );
