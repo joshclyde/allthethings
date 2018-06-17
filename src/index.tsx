@@ -5,10 +5,12 @@ import { combineReducers, createStore } from "redux";
 import App from "./App";
 // import { reducers as chordReducers } from "./Chord";
 import { reducers as practiceReducers } from "./Practice";
+import { reducers as metronomeReducers } from "./Metronome";
 
 const reducers = combineReducers({
   // chords: chordReducers,
   practice: practiceReducers,
+  metronome: metronomeReducers,
 });
 
 // https://github.com/zalmoxisus/redux-devtools-extension#11-basic-store
