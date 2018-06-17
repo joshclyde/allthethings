@@ -24,6 +24,7 @@
     "@types/react-redux": "6.0.2",
     "react": "16.4.0",
     "react-dom": "16.4.0",
+    "react-jss": "^8.5.1",
     "react-redux": "5.0.7",
     "redux": "4.0.0"
   },
