@@ -1,5 +1,4 @@
 export const NEXT_CHORD = "NEXT_CHORD";
-export const DO_TICK = "DO_TICK";
 
 const reducers = (
   state = {
@@ -18,12 +17,6 @@ const reducers = (
         ...state,
         chordCurrent: state.chordNext,
         chordNext: action.chord,
-      };
-    case DO_TICK:
-      return {
-        ...state,
-        chordCurrent: state.chordNext,
-        chordNext: state.chordCurrent,
       };
     default:
       return {
