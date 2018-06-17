@@ -1,13 +1,10 @@
 import * as React from "react";
 
-import Chord from "./Chord";
+import Practice from "./Practice";
 
 const App = () => (
   <div>
-    <Chord />
-    <Chord />
-    <Chord />
-    <Chord />
+    <Practice />
   </div>
 );
 

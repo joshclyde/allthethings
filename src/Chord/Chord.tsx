@@ -28,4 +28,5 @@ const SmartChord = connect(
   mapDispatchToProps,
 )(Chord);
 
-export default SmartChord;
+// export default SmartChord;
+export default Chord;
