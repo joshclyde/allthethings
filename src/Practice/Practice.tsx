@@ -11,10 +11,10 @@ const Practice = ({
   chordCurrent,
   chordNext,
 }: IPracticeProps) => (
-  <div>
-  <div className={classes.theDiv} >
-    <Chord chord={chordCurrent} />
-    <Chord chord={chordNext} />
+  <div className={classes.wholeDiv} >
+    <div className={classes.chordDiv} >
+      <Chord chord={chordCurrent} />
+      <Chord chord={chordNext} />
     </div>
     <Metronome />
   </div>
@@ -22,11 +22,20 @@ const Practice = ({
 
 
 const styles = {
-  theDiv: {
+  wholeDiv: {
+    width: 300,
+    display: "flex",
+    flexDirection: "col",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    alignItems: "flex-start",
+    alignContent: "flext-start",
+  },
+  chordDiv: {
     width: 300,
     display: "flex",
     flexDirection: "row",
-    flexWrap: "nowrap",
+    flexWrap: "wrap",
     justifyContent: "space-around",
     alignItems: "flex-start",
     alignContent: "flext-start",
