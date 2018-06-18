@@ -6,10 +6,18 @@ const Settings = ({
   classes,
   onClickDown,
   onClickUp,
+  onClickDownDown,
+  onClickUpUp,
 }: ISettingsProps) => (
   <div>
-    <button type="button" onClick={onClickUp}>+</button>
-    <button type="button" onClick={onClickDown}>-</button>
+    <div>
+      <button type="button" onClick={onClickDown}>-</button>
+      <button type="button" onClick={onClickUp}>+</button>
+    </div>
+    <div>
+      <button type="button" onClick={onClickDownDown}>--</button>
+      <button type="button" onClick={onClickUpUp}>++</button>
+    </div>
   </div>
 );
 
