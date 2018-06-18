@@ -1,5 +1,7 @@
 export const SET_CURRENT_TICK = "SET_CURRENT_TICK";
 export const INITIALIZE_METRONOME = "INITIALIZE_METRONOME";
+export const DECREMENT_BPM = "DECREMENT_BPM";
+export const INCREMENT_BPM = "INCREMENT_BPM";
 
 const reducers = (
   state = {
@@ -30,6 +32,16 @@ const reducers = (
         currentTick: action.time,
         previousTick: moveTick ? state.nextTick : state.previousTick,
         nextTick: moveTick ? calculateNextTick(state.bpm, state.nextTick) : state.nextTick,
+      };
+    case DECREMENT_BPM:
+      return {
+        ...state,
+        bpm: state.bpm - 1,
+      };
+    case INCREMENT_BPM:
+      return {
+        ...state,
+        bpm: state.bpm + 1,
       };
     default:
       return {

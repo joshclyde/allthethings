@@ -3,8 +3,9 @@ import injectSheet from "react-jss";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { IMetronomeProps } from "./types";
-import { SET_CURRENT_TICK, INITIALIZE_METRONOME } from "./reducers";
+import { SET_CURRENT_TICK, INITIALIZE_METRONOME, DECREMENT_BPM, INCREMENT_BPM } from "./reducers";
 import TempoButton from "./TempoButton.tsx";
+import Settings from "./Settings.tsx";
 
 class Metronome extends React.Component<IMetronomeProps, {timer: NodeJS.Timer}> {
 
@@ -27,13 +28,22 @@ class Metronome extends React.Component<IMetronomeProps, {timer: NodeJS.Timer}> 
   }
   
   render() {
-    const { classes, bpm, previousTick, currentTick } = this.props;
+    const {
+      classes,
+      bpm,
+      previousTick,
+      currentTick,
+      onClickDown,
+      onClickUp,
+    } = this.props;
     const showLength = 400;
     // const opacity = Math.sqrt(Math.max((showLength - (currentTick - previousTick)) / showLength, 0));
     const opacity = (showLength - (currentTick - previousTick)) / showLength;
     const radius = Math.max(opacity * 25, 0);
     return <div>
       <TempoButton alpha={opacity} />
+      <Settings onClickDown={onClickDown} onClickUp={onClickUp} />
+      {bpm}
     </div>
   }
 }
@@ -56,7 +66,13 @@ const mapDispatchToProps = (dispatch: any, props: any) => {
     },
     tick: () => {
       dispatch({ type: SET_CURRENT_TICK, time: Date.now() })
-    }
+    },
+    onClickDown: () => {
+      dispatch({ type: DECREMENT_BPM })
+    },
+    onClickUp: () => {
+      dispatch({ type: INCREMENT_BPM })
+    },
   };
 };
 
