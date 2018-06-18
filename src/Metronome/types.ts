@@ -8,4 +8,6 @@ export interface IMetronomeProps {
   tick(): void;
   onClickDown(): void,
   onClickUp(): void,
+  onClickDownDown(): void,
+  onClickUpUp(): void,
 }
