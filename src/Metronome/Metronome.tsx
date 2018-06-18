@@ -7,11 +7,11 @@ import { SET_CURRENT_TICK, INITIALIZE_METRONOME, DECREMENT_BPM, INCREMENT_BPM, A
 import TempoButton from "./TempoButton.tsx";
 import Settings from "./Settings.tsx";
 
-class Metronome extends React.Component<IMetronomeProps, {timer: NodeJS.Timer}> {
+class Metronome extends React.Component<IMetronomeProps, {timer: any}> {
 
   constructor(props: IMetronomeProps) {
     super(props);
-
+    
     const { initialize, tick } = this.props;
     initialize();
     this.state = {
@@ -42,14 +42,23 @@ class Metronome extends React.Component<IMetronomeProps, {timer: NodeJS.Timer}> 
     // const opacity = Math.sqrt(Math.max((showLength - (currentTick - previousTick)) / showLength, 0));
     const opacity = (showLength - (currentTick - previousTick)) / showLength;
     const radius = Math.max(opacity * 25, 0);
-    return <div>
+    return <div className={classes.wholeDiv}>
+      {bpm}
       <TempoButton alpha={opacity} />
       <Settings onClickDown={onClickDown} onClickUp={onClickUp} onClickUpUp={onClickUpUp} onClickDownDown={onClickDownDown}/>
-      {bpm}
     </div>
   }
 }
 const styles = {
+  wholeDiv: {
+    // width: 300,
+    display: "flex",
+    flexDirection: "col",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    alignItems: "flex-start",
+    alignContent: "flext-start",
+  }
 };
 
 const mapStateToProps = (state: any, props: any) => {
