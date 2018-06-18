@@ -1,4 +1,3 @@
-// export const NEXT_CHORD = "NEXT_CHORD";
 export const SET_CURRENT_TICK = "SET_CURRENT_TICK";
 export const INITIALIZE_METRONOME = "INITIALIZE_METRONOME";
 
@@ -15,7 +14,6 @@ const reducers = (
     time: 0,
   },
 ) => {
-  // console.log("hellllo");
   switch (action.type) {
     case INITIALIZE_METRONOME:
       return {

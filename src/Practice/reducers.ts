@@ -10,7 +10,6 @@ const reducers = (
     chord: undefined,
   },
 ) => {
-  // console.log("hellllo");
   switch (action.type) {
     case NEXT_CHORD:
       return {

@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 import { IMetronomeProps } from "./types";
 import { SET_CURRENT_TICK, INITIALIZE_METRONOME } from "./reducers";
+import TempoButton from "./TempoButton.tsx";
 
 class Metronome extends React.Component<IMetronomeProps, {timer: NodeJS.Timer}> {
 
@@ -32,11 +33,7 @@ class Metronome extends React.Component<IMetronomeProps, {timer: NodeJS.Timer}> 
     const opacity = (showLength - (currentTick - previousTick)) / showLength;
     const radius = Math.max(opacity * 25, 0);
     return <div>
-      <svg height="50" width="50">
-        <circle cx="25" cy="25" r={radius} fill="#85EFC4" opacity={.3}/>
-        <circle cx="25" cy="25" r="15" fill="#85EFC4"/>
-        Sorry, your browser does not support inline SVG.
-      </svg>
+      <TempoButton alpha={opacity} />
     </div>
   }
 }
@@ -58,7 +55,6 @@ const mapDispatchToProps = (dispatch: any, props: any) => {
       dispatch({type: INITIALIZE_METRONOME, time: Date.now(), bpm: 120 })
     },
     tick: () => {
-      console.log("tick");
       dispatch({ type: SET_CURRENT_TICK, time: Date.now() })
     }
   };
