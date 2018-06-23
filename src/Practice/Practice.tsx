@@ -5,18 +5,21 @@ import { compose } from "redux";
 import Chord from "../Chord";
 import Metronome from "../Metronome";
 import { IPracticeProps } from "./types";
+import { NEXT_CHORD } from "./reducers";
+import { randomChord } from "../Chord/utils";
 
 const Practice = ({
   classes,
   chordCurrent,
   chordNext,
+  onBeat,
 }: IPracticeProps) => (
   <div className={classes.wholeDiv} >
     <div className={classes.chordDiv} >
       <Chord chord={chordCurrent} />
       <Chord chord={chordNext} />
     </div>
-    <Metronome />
+    <Metronome onBeat={onBeat}/>
   </div>
 );
 
@@ -52,6 +55,9 @@ const mapStateToProps = (state: any, props: any) => {
 
 const mapDispatchToProps = (dispatch: any, props: any) => {
   return {
+    onBeat: () => {
+      dispatch({ type: NEXT_CHORD, chord: randomChord(), });
+    }
   };
 };
 

@@ -48,3 +48,18 @@ export const getChordString = (chord: string) => {
       return "";
   }
 };
+
+export const randomChord = () => {
+  switch (Math.floor(Math.random() * 4)) {
+    case 0:
+      return "C";
+    case 1:
+      return "G";
+    case 2:
+      return "Am";
+    case 3:
+      return "F";
+    default:
+      return "C";
+  }
+};
