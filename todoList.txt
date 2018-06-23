@@ -1,0 +1,12 @@
+figure out compose function
+add selectors
+figure out best way to do redux stuff
+how to add assets? (mp3 for metronome, png for chords)
+how do i want to do chords?
+  - CURRENT: function that takes in parameters and creates string representation
+  - static images for each chord
+  - dynamically create the image for each chord (basically overlaying images on top of each other)
+make button component
+make metronome component prettier
+remove ticking from redux
+metronome: could replace current stuff with animation instead of constantly changing radius?
