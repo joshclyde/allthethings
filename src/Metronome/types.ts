@@ -1,5 +1,6 @@
 export interface IMetronomeProps {
   classes: any;
+  beat: number;
   bpm: number;
   previousTick: number;
   currentTick: number;
