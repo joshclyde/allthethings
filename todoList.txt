@@ -3,6 +3,8 @@ Refactor Code
   add selectors
   figure out best way to do redux stuff
   remove ticking from redux
+  change setInterval to be exact time between beats
+  separate metronome component to smart and dumb components
 
 New Code
   how to add assets? (mp3 for metronome, png for chords)
@@ -18,15 +20,15 @@ Refactor Front End
   make bpm a edittext input
 
 Features
-  Chord List
-    select all the chords they wish to practice
-  Chord Picture
+  - Chord List
+    - select all the chords they wish to practice
+  - Chord Picture
     chord pics for each chord
-  Connect metronome to chords
-    time signature
-    change chords each measure
-  Metronome sound
-    multiple choices
+  ✔ Connect metronome to chords
+    ✔ time signature
+    ✔ change chords each measure
+  - Metronome sound
+    - multiple choices
   
 
   
