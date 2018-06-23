@@ -30,6 +30,7 @@ class Metronome extends React.Component<IMetronomeProps, {timer: any}> {
   render() {
     const {
       classes,
+      beat,
       bpm,
       previousTick,
       currentTick,
@@ -43,7 +44,7 @@ class Metronome extends React.Component<IMetronomeProps, {timer: any}> {
     const opacity = (showLength - (currentTick - previousTick)) / showLength;
     const radius = Math.max(opacity * 25, 0);
     return <div className={classes.wholeDiv}>
-      {bpm}
+      {beat}  -  {bpm}
       <TempoButton alpha={opacity} />
       <Settings onClickDown={onClickDown} onClickUp={onClickUp} onClickUpUp={onClickUpUp} onClickDownDown={onClickDownDown}/>
     </div>
@@ -67,6 +68,7 @@ const mapStateToProps = (state: any, props: any) => {
     previousTick: state.metronome.previousTick,
     currentTick: state.metronome.currentTick,
     nextTick: state.metronome.nextTick,
+    beat: state.metronome.beat,
   };
 };
 
