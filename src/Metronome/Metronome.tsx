@@ -7,7 +7,7 @@ import { TICK, INITIALIZE_METRONOME, DECREMENT_BPM, INCREMENT_BPM, ADD_BPM } fro
 import TempoButton from "./TempoButton.tsx";
 import Settings from "./Settings.tsx";
 
-let prevBeat = undefined;
+let prevBeat;
 
 class Metronome extends React.Component<IMetronomeProps, {timer: any}> {
 
