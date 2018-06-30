@@ -11,7 +11,7 @@ const Chord = ({ chord }: IChordProps) => (
 
 const mapStateToProps = (state: any, props: any) => {
   return {
-    chord: state.chords.chord
+    chord: state.chords.chord,
   };
 };
 

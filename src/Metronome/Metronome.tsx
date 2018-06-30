@@ -8,7 +8,7 @@ import {
   INITIALIZE_METRONOME,
   DECREMENT_BPM,
   INCREMENT_BPM,
-  ADD_BPM
+  ADD_BPM,
 } from "./reducers";
 import TempoButton from "./TempoButton.tsx";
 import Settings from "./Settings.tsx";
@@ -58,7 +58,7 @@ class Metronome extends React.Component<IMetronomeProps, { timer: any }> {
       onClickDown,
       onClickUp,
       onClickUpUp,
-      onClickDownDown
+      onClickDownDown,
     } = this.props;
     const showLength = 400;
     // const opacity = Math.sqrt(Math.max((showLength - (currentTick - previousTick)) / showLength, 0));
@@ -86,8 +86,8 @@ const styles = {
     flexWrap: "wrap",
     justifyContent: "space-around",
     alignItems: "flex-start",
-    alignContent: "flext-start"
-  }
+    alignContent: "flext-start",
+  },
 };
 
 const mapStateToProps = (state: any, props: any) => {
@@ -97,7 +97,7 @@ const mapStateToProps = (state: any, props: any) => {
     currentTick: state.metronome.currentTick,
     nextTick: state.metronome.nextTick,
     beat: state.metronome.beat,
-    timeNumerator: state.metronome.timeNumerator
+    timeNumerator: state.metronome.timeNumerator,
   };
 };
 
@@ -120,7 +120,7 @@ const mapDispatchToProps = (dispatch: any, props: any) => {
     },
     onClickDownDown: () => {
       dispatch({ type: ADD_BPM, bpmNumber: -10 });
-    }
+    },
   };
 };
 

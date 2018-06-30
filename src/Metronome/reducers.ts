@@ -9,7 +9,7 @@ const reducers = (
   state = {
     bpm: 120,
     timeNumerator: 4,
-    beat: 1
+    beat: 1,
   },
   action: {
     type: undefined;
@@ -23,37 +23,37 @@ const reducers = (
     case INITIALIZE_METRONOME:
       return {
         ...state,
-        bpm: action.bpm
+        bpm: action.bpm,
       };
     case TICK:
       return {
         ...state,
-        beat: (state.beat + 1) % state.timeNumerator
+        beat: (state.beat + 1) % state.timeNumerator,
       };
     case DECREMENT_BPM:
       return {
         ...state,
-        bpm: state.bpm - 1
+        bpm: state.bpm - 1,
       };
     case INCREMENT_BPM:
       return {
         ...state,
-        bpm: state.bpm + 1
+        bpm: state.bpm + 1,
       };
     case ADD_BPM:
       return {
         ...state,
-        bpm: state.bpm + action.bpmNumber
+        bpm: state.bpm + action.bpmNumber,
       };
     case SET_TIME_NUMERATOR:
       return {
         ...state,
         timeNumerator: action.timeNumerator,
-        beat: 1
+        beat: 1,
       };
     default:
       return {
-        ...state
+        ...state,
       };
   }
 };

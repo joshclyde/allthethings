@@ -5,12 +5,12 @@ const reducers = (state = { chord: "C" }, action: { type: undefined }) => {
     case SET_CHORD:
       return {
         ...state,
-        chord: "C"
+        chord: "C",
       };
     default:
       return {
         ...state,
-        chord: "C"
+        chord: "C",
       };
   }
 };

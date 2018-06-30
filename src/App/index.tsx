@@ -8,7 +8,7 @@ import { reducers as metronomeReducers } from "../Metronome";
 const reducers = combineReducers({
   // chords: chordReducers,
   practice: practiceReducers,
-  metronome: metronomeReducers
+  metronome: metronomeReducers,
 });
 
 // https://github.com/zalmoxisus/redux-devtools-extension#11-basic-store

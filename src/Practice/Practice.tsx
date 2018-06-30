@@ -12,7 +12,7 @@ const Practice = ({
   classes,
   chordCurrent,
   chordNext,
-  onBeat
+  onBeat,
 }: IPracticeProps) => (
   <div className={classes.wholeDiv}>
     <div className={classes.chordDiv}>
@@ -32,7 +32,7 @@ const styles = {
     flexWrap: "wrap",
     justifyContent: "space-around",
     alignItems: "flex-start",
-    alignContent: "flext-start"
+    alignContent: "flext-start",
   },
   chordDiv: {
     width: 300,
@@ -41,14 +41,14 @@ const styles = {
     flexWrap: "wrap",
     justifyContent: "space-around",
     alignItems: "flex-start",
-    alignContent: "flext-start"
-  }
+    alignContent: "flext-start",
+  },
 };
 
 const mapStateToProps = (state: any, props: any) => {
   return {
     chordCurrent: state.practice.chordCurrent,
-    chordNext: state.practice.chordNext
+    chordNext: state.practice.chordNext,
   };
 };
 
@@ -56,7 +56,7 @@ const mapDispatchToProps = (dispatch: any, props: any) => {
   return {
     onBeat: () => {
       dispatch({ type: NEXT_CHORD, chord: randomChord() });
-    }
+    },
   };
 };
 

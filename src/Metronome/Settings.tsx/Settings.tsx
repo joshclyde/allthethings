@@ -7,7 +7,7 @@ const Settings = ({
   onClickDown,
   onClickUp,
   onClickDownDown,
-  onClickUpUp
+  onClickUpUp,
 }: ISettingsProps) => (
   <div>
     <div>

@@ -16,15 +16,15 @@ const styles = {
   both: {
     cx: 25,
     cy: 25,
-    fill: "#85EFC4"
+    fill: "#85EFC4",
   },
   front: {
-    r: 15
+    r: 15,
   },
   back: {
     r: props => Math.max(props.alpha * 25, 0),
-    opacity: 0.3
-  }
+    opacity: 0.3,
+  },
 };
 
 // export default SmartTempoButton;
