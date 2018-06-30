@@ -16,7 +16,7 @@ const reducers = combineReducers({
 const store = createStore(
   reducers /* preloadedState, */,
   (window as any).__REDUX_DEVTOOLS_EXTENSION__ &&
-    (window as any).__REDUX_DEVTOOLS_EXTENSION__()
+    (window as any).__REDUX_DEVTOOLS_EXTENSION__(),
 );
 
 const App = () => (

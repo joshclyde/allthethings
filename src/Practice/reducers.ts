@@ -8,7 +8,7 @@ const reducers = (
   action: {
     type: undefined;
     chord: undefined;
-  }
+  },
 ) => {
   switch (action.type) {
     case NEXT_CHORD:

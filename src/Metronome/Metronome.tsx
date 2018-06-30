@@ -127,16 +127,16 @@ const mapDispatchToProps = (dispatch: any, props: any) => {
 const SmartMetronome = compose(
   connect(
     mapStateToProps,
-    mapDispatchToProps
+    mapDispatchToProps,
   ),
   injectSheet(styles),
-  Metronome
+  Metronome,
 ) as any;
 
 const temp = injectSheet(styles)(Metronome);
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(temp);
 
 // export default SmartMetronome;

@@ -17,7 +17,7 @@ const reducers = (
     time: 0;
     bpmNumber: 0;
     timeNumerator: 4;
-  }
+  },
 ) => {
   switch (action.type) {
     case INITIALIZE_METRONOME:

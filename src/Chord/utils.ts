@@ -3,7 +3,7 @@ const createString = (
   s1: number,
   s2: number,
   s3: number,
-  s4: number
+  s4: number,
 ) => {
   let chordString = `.  ${chord}  .\n\n`;
   s1 === 0 ? (chordString += "○ ") : (chordString += `${s1} `);

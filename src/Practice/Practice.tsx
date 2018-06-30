@@ -63,16 +63,16 @@ const mapDispatchToProps = (dispatch: any, props: any) => {
 const SmartPractice = compose(
   connect(
     mapStateToProps,
-    mapDispatchToProps
+    mapDispatchToProps,
   ),
   injectSheet(styles),
-  Practice
+  Practice,
 ) as any;
 
 const temp = injectSheet(styles)(Practice);
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(temp);
 
 // export default SmartPractice;

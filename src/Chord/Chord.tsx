@@ -21,7 +21,7 @@ const mapDispatchToProps = (dispatch: any, props: any) => {
 
 const SmartChord = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Chord);
 
 // export default SmartChord;
