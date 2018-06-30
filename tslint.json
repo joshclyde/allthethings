@@ -1,6 +1,6 @@
 {
-    "extends": ["tslint:latest", "tslint-react"],
-    "compilerOptions": {
-        "noImplicitAny": false,
-    }
+  "extends": ["tslint:latest", "tslint-react"],
+  "compilerOptions": {
+    "noImplicitAny": false,
+  }
 }
