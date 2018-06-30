@@ -3,23 +3,23 @@ export const NEXT_CHORD = "NEXT_CHORD";
 const reducers = (
   state = {
     chordCurrent: "C",
-    chordNext: "G",
+    chordNext: "G"
   },
   action: {
-    type: undefined,
-    chord: undefined,
-  },
+    type: undefined;
+    chord: undefined;
+  }
 ) => {
   switch (action.type) {
     case NEXT_CHORD:
       return {
         ...state,
         chordCurrent: state.chordNext,
-        chordNext: action.chord,
+        chordNext: action.chord
       };
     default:
       return {
-        ...state,
+        ...state
       };
   }
 };

@@ -8,9 +8,9 @@ export interface IMetronomeProps {
   timeNumerator: number;
   initialize(): void;
   tick(): void;
-  onClickDown(): void,
-  onClickUp(): void,
-  onClickDownDown(): void,
-  onClickUpUp(): void,
-  onBeat(): void,
+  onClickDown(): void;
+  onClickUp(): void;
+  onClickDownDown(): void;
+  onClickUpUp(): void;
+  onBeat(): void;
 }

@@ -7,22 +7,29 @@ const Settings = ({
   onClickDown,
   onClickUp,
   onClickDownDown,
-  onClickUpUp,
+  onClickUpUp
 }: ISettingsProps) => (
   <div>
     <div>
-      <button type="button" onClick={onClickDown}>-</button>
-      <button type="button" onClick={onClickUp}>+</button>
+      <button type="button" onClick={onClickDown}>
+        -
+      </button>
+      <button type="button" onClick={onClickUp}>
+        +
+      </button>
     </div>
     <div>
-      <button type="button" onClick={onClickDownDown}>--</button>
-      <button type="button" onClick={onClickUpUp}>++</button>
+      <button type="button" onClick={onClickDownDown}>
+        --
+      </button>
+      <button type="button" onClick={onClickUpUp}>
+        ++
+      </button>
     </div>
   </div>
 );
 
-const styles = {
-};
+const styles = {};
 
 // export default SmartSettings;
 export default injectSheet(styles)(Settings);

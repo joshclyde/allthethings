@@ -12,17 +12,16 @@ const Practice = ({
   classes,
   chordCurrent,
   chordNext,
-  onBeat,
+  onBeat
 }: IPracticeProps) => (
-  <div className={classes.wholeDiv} >
-    <div className={classes.chordDiv} >
+  <div className={classes.wholeDiv}>
+    <div className={classes.chordDiv}>
       <Chord chord={chordCurrent} />
       <Chord chord={chordNext} />
     </div>
-    <Metronome onBeat={onBeat}/>
+    <Metronome onBeat={onBeat} />
   </div>
 );
-
 
 const styles = {
   wholeDiv: {
@@ -33,7 +32,7 @@ const styles = {
     flexWrap: "wrap",
     justifyContent: "space-around",
     alignItems: "flex-start",
-    alignContent: "flext-start",
+    alignContent: "flext-start"
   },
   chordDiv: {
     width: 300,
@@ -42,21 +41,21 @@ const styles = {
     flexWrap: "wrap",
     justifyContent: "space-around",
     alignItems: "flex-start",
-    alignContent: "flext-start",
-  },
+    alignContent: "flext-start"
+  }
 };
 
 const mapStateToProps = (state: any, props: any) => {
   return {
     chordCurrent: state.practice.chordCurrent,
-    chordNext: state.practice.chordNext,
+    chordNext: state.practice.chordNext
   };
 };
 
 const mapDispatchToProps = (dispatch: any, props: any) => {
   return {
     onBeat: () => {
-      dispatch({ type: NEXT_CHORD, chord: randomChord(), });
+      dispatch({ type: NEXT_CHORD, chord: randomChord() });
     }
   };
 };
@@ -64,13 +63,16 @@ const mapDispatchToProps = (dispatch: any, props: any) => {
 const SmartPractice = compose(
   connect(
     mapStateToProps,
-    mapDispatchToProps,
+    mapDispatchToProps
   ),
   injectSheet(styles),
-  Practice,
+  Practice
 ) as any;
 
 const temp = injectSheet(styles)(Practice);
-export default connect(mapStateToProps, mapDispatchToProps)(temp);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(temp);
 
 // export default SmartPractice;

@@ -3,19 +3,15 @@ import { connect } from "react-redux";
 import { IChordProps } from "./types";
 import { getChordString } from "./utils";
 
-const Chord = ({
-  chord,
-}: IChordProps) => (
+const Chord = ({ chord }: IChordProps) => (
   <div>
-    <pre>
-      {getChordString(chord)}
-    </pre>
+    <pre>{getChordString(chord)}</pre>
   </div>
 );
 
 const mapStateToProps = (state: any, props: any) => {
   return {
-    chord: state.chords.chord,
+    chord: state.chords.chord
   };
 };
 
@@ -25,7 +21,7 @@ const mapDispatchToProps = (dispatch: any, props: any) => {
 
 const SmartChord = connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(Chord);
 
 // export default SmartChord;

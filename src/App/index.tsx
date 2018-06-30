@@ -8,14 +8,15 @@ import { reducers as metronomeReducers } from "../Metronome";
 const reducers = combineReducers({
   // chords: chordReducers,
   practice: practiceReducers,
-  metronome: metronomeReducers,
+  metronome: metronomeReducers
 });
 
 // https://github.com/zalmoxisus/redux-devtools-extension#11-basic-store
 // this line is so i can see the redux store
 const store = createStore(
-  reducers, /* preloadedState, */
-  (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__(),
+  reducers /* preloadedState, */,
+  (window as any).__REDUX_DEVTOOLS_EXTENSION__ &&
+    (window as any).__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 const App = () => (
