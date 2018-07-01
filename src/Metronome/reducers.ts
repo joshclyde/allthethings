@@ -7,9 +7,9 @@ export const SET_TIME_NUMERATOR = "SET_TIME_NUMERATOR";
 
 const reducers = (
   state = {
+    beat: 1,
     bpm: 120,
     timeNumerator: 4,
-    beat: 1,
   },
   action: {
     type: undefined;
@@ -48,8 +48,8 @@ const reducers = (
     case SET_TIME_NUMERATOR:
       return {
         ...state,
-        timeNumerator: action.timeNumerator,
         beat: 1,
+        timeNumerator: action.timeNumerator,
       };
     default:
       return {

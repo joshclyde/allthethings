@@ -2,7 +2,7 @@ import * as React from "react";
 import injectSheet from "react-jss";
 import { ITempoButtonProps } from "./types";
 
-const TempoButton = ({ alpha, classes }: ITempoButtonProps) => (
+const TempoButton = ({ classes }: ITempoButtonProps) => (
   <div>
     <svg height="50" width="50">
       <circle className={`${classes.both} ${classes.back}`} />
@@ -13,6 +13,10 @@ const TempoButton = ({ alpha, classes }: ITempoButtonProps) => (
 );
 
 const styles = {
+  back: {
+    opacity: 0.3,
+    r: (props) => Math.max(props.alpha * 25, 0),
+  },
   both: {
     cx: 25,
     cy: 25,
@@ -20,10 +24,6 @@ const styles = {
   },
   front: {
     r: 15,
-  },
-  back: {
-    r: props => Math.max(props.alpha * 25, 0),
-    opacity: 0.3,
   },
 };
 

@@ -1,17 +1,17 @@
 import * as React from "react";
 import injectSheet from "react-jss";
 import { connect } from "react-redux";
-import { compose } from "redux";
-import { IMetronomeProps } from "./types";
+
 import {
-  TICK,
-  INITIALIZE_METRONOME,
+  ADD_BPM,
   DECREMENT_BPM,
   INCREMENT_BPM,
-  ADD_BPM,
+  INITIALIZE_METRONOME,
+  TICK,
 } from "./reducers";
-import TempoButton from "./TempoButton.tsx";
 import Settings from "./Settings.tsx";
+import TempoButton from "./TempoButton.tsx";
+import { IMetronomeProps } from "./types";
 
 let prevBeat;
 
@@ -19,7 +19,7 @@ class Metronome extends React.Component<IMetronomeProps, { timer: any }> {
   constructor(props: IMetronomeProps) {
     super(props);
 
-    const { initialize, tick, onBeat, bpm, beat } = this.props;
+    const { initialize, tick, bpm, beat } = this.props;
     initialize();
     setTimeout(() => {
       tick();
@@ -27,10 +27,10 @@ class Metronome extends React.Component<IMetronomeProps, { timer: any }> {
     prevBeat = beat;
   }
 
-  componentDidUpdate() {
+  public componentDidUpdate() {
     const { tick, onBeat, bpm, beat, timeNumerator } = this.props;
     if (beat !== prevBeat) {
-      if (beat + 1 == timeNumerator) {
+      if (beat + 1 === timeNumerator) {
         setTimeout(() => {
           tick();
           onBeat();
@@ -44,11 +44,11 @@ class Metronome extends React.Component<IMetronomeProps, { timer: any }> {
     }
   }
 
-  componentWillUnmount() {
+  public componentWillUnmount() {
     clearInterval(this.state.timer);
   }
 
-  render() {
+  public render() {
     const {
       classes,
       beat,
@@ -63,7 +63,7 @@ class Metronome extends React.Component<IMetronomeProps, { timer: any }> {
     const showLength = 400;
     // const opacity = Math.sqrt(Math.max((showLength - (currentTick - previousTick)) / showLength, 0));
     const opacity = (showLength - (currentTick - previousTick)) / showLength;
-    const radius = Math.max(opacity * 25, 0);
+    // const radius = Math.max(opacity * 25, 0);
     return (
       <div className={classes.wholeDiv}>
         {beat + 1} - {bpm}
@@ -81,36 +81,36 @@ class Metronome extends React.Component<IMetronomeProps, { timer: any }> {
 const styles = {
   wholeDiv: {
     // width: 300,
+    alignContent: "flext-start",
+    alignItems: "flex-start",
     display: "flex",
     flexDirection: "col",
     flexWrap: "wrap",
     justifyContent: "space-around",
-    alignItems: "flex-start",
-    alignContent: "flext-start",
   },
 };
 
-const mapStateToProps = (state: any, props: any) => {
+const mapStateToProps = (state: any) => {
   return {
+    beat: state.metronome.beat,
     bpm: state.metronome.bpm,
-    previousTick: state.metronome.previousTick,
     currentTick: state.metronome.currentTick,
     nextTick: state.metronome.nextTick,
-    beat: state.metronome.beat,
+    previousTick: state.metronome.previousTick,
     timeNumerator: state.metronome.timeNumerator,
   };
 };
 
-const mapDispatchToProps = (dispatch: any, props: any) => {
+const mapDispatchToProps = (dispatch: any) => {
   return {
     initialize: () => {
       dispatch({ type: INITIALIZE_METRONOME, time: Date.now(), bpm: 120 });
     },
-    tick: () => {
-      dispatch({ type: TICK, time: Date.now() });
-    },
     onClickDown: () => {
       dispatch({ type: DECREMENT_BPM });
+    },
+    onClickDownDown: () => {
+      dispatch({ type: ADD_BPM, bpmNumber: -10 });
     },
     onClickUp: () => {
       dispatch({ type: INCREMENT_BPM });
@@ -118,20 +118,20 @@ const mapDispatchToProps = (dispatch: any, props: any) => {
     onClickUpUp: () => {
       dispatch({ type: ADD_BPM, bpmNumber: 10 });
     },
-    onClickDownDown: () => {
-      dispatch({ type: ADD_BPM, bpmNumber: -10 });
+    tick: () => {
+      dispatch({ type: TICK, time: Date.now() });
     },
   };
 };
 
-const SmartMetronome = compose(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps,
-  ),
-  injectSheet(styles),
-  Metronome,
-) as any;
+// const SmartMetronome = compose(
+//   connect(
+//     mapStateToProps,
+//     mapDispatchToProps,
+//   ),
+//   injectSheet(styles),
+//   Metronome,
+// ) as any;
 
 const temp = injectSheet(styles)(Metronome);
 export default connect(

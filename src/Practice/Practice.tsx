@@ -1,12 +1,12 @@
 import * as React from "react";
 import injectSheet from "react-jss";
 import { connect } from "react-redux";
-import { compose } from "redux";
+
 import Chord from "../Chord";
-import Metronome from "../Metronome";
-import { IPracticeProps } from "./types";
-import { NEXT_CHORD } from "./reducers";
 import { randomChord } from "../Chord/utils";
+import Metronome from "../Metronome";
+import { NEXT_CHORD } from "./reducers";
+import { IPracticeProps } from "./types";
 
 const Practice = ({
   classes,
@@ -24,24 +24,24 @@ const Practice = ({
 );
 
 const styles = {
-  wholeDiv: {
+  chordDiv: {
+    alignContent: "flext-start",
+    alignItems: "flex-start",
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
     width: 300,
+  },
+  wholeDiv: {
+    alignContent: "flext-start",
+    alignItems: "flex-start",
     border: "1px solid black",
     display: "flex",
     flexDirection: "col",
     flexWrap: "wrap",
     justifyContent: "space-around",
-    alignItems: "flex-start",
-    alignContent: "flext-start",
-  },
-  chordDiv: {
     width: 300,
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-    alignItems: "flex-start",
-    alignContent: "flext-start",
   },
 };
 
@@ -60,14 +60,14 @@ const mapDispatchToProps = (dispatch: any, props: any) => {
   };
 };
 
-const SmartPractice = compose(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps,
-  ),
-  injectSheet(styles),
-  Practice,
-) as any;
+// const SmartPractice = compose(
+//   connect(
+//     mapStateToProps,
+//     mapDispatchToProps,
+//   ),
+//   injectSheet(styles),
+//   Practice,
+// ) as any;
 
 const temp = injectSheet(styles)(Practice);
 export default connect(
