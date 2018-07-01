@@ -7,7 +7,9 @@
     "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "./node_modules/.bin/tslint -p tsconfig.json",
-    "prettier": "./node_modules/.bin/prettier --write \"src/**/*.{ts,tsx}\""
+    "precommit": "npm run prettier:diff",
+    "prettier:write": "./node_modules/.bin/prettier --write \"src/**/*.{ts,tsx}\"",
+    "prettier:diff": "./node_modules/.bin/prettier --list-different \"src/**/*.{ts,tsx}\""
   },
   "repository": {
     "type": "git",
@@ -25,7 +27,7 @@
     "@types/react-redux": "6.0.2",
     "react": "16.4.0",
     "react-dom": "16.4.0",
-    "react-jss": "^8.5.1",
+    "react-jss": "8.5.1",
     "react-redux": "5.0.7",
     "redux": "4.0.0"
   },
@@ -35,6 +37,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.7",
+    "husky": "^0.14.3",
     "path": "^0.12.7",
     "prettier": "^1.13.7",
     "source-map-loader": "^0.2.3",
