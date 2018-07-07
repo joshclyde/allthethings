@@ -1,5 +1,6 @@
 import * as React from "react";
 import injectSheet from "react-jss";
+
 import { ISettingsProps } from "./types";
 
 const Settings = ({

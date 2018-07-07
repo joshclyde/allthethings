@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "./node_modules/.bin/tslint -p tsconfig.json",
+    "lint": "./node_modules/.bin/tslint -p tsconfig.json \"src/**/*.{ts,tsx}\"",
     "precommit": "npm run prettier:diff && npm run lint",
     "prettier:write": "./node_modules/.bin/prettier --write \"src/**/*.{ts,tsx}\"",
     "prettier:diff": "./node_modules/.bin/prettier --list-different \"src/**/*.{ts,tsx}\""

@@ -9,8 +9,8 @@ import {
   INITIALIZE_METRONOME,
   TICK,
 } from "./reducers";
-import Settings from "./Settings.tsx";
-import TempoButton from "./TempoButton.tsx";
+import Settings from "./Settings";
+import TempoButton from "./TempoButton";
 import { IMetronomeProps } from "./types";
 
 let prevBeat;
