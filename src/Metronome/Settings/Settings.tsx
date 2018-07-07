@@ -3,13 +3,7 @@ import injectSheet from "react-jss";
 
 import { ISettingsProps } from "./types";
 
-const Settings = ({
-  classes,
-  onClickDown,
-  onClickUp,
-  onClickDownDown,
-  onClickUpUp,
-}: ISettingsProps) => (
+const Settings = ({ classes, onClickDown, onClickUp, onClickDownDown, onClickUpUp }: ISettingsProps) => (
   <div>
     <div>
       <button type="button" onClick={onClickDown}>

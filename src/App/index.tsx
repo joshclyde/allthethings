@@ -15,8 +15,7 @@ const reducers = combineReducers({
 // this line is so i can see the redux store
 const store = createStore(
   reducers /* preloadedState, */,
-  (window as any).__REDUX_DEVTOOLS_EXTENSION__ &&
-    (window as any).__REDUX_DEVTOOLS_EXTENSION__(),
+  (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__(),
 );
 
 const PracticeComponent = <Practice />;
@@ -24,7 +23,8 @@ const PracticeComponent = <Practice />;
 const App = () => (
   <div>
     <Provider store={store}>
-      <TileGrid width="1000" height="600" />
+      {/* TODO make innerWidth and innerHeight redux */}
+      <TileGrid width={window.innerWidth} height={window.innerHeight} />
     </Provider>
   </div>
 );

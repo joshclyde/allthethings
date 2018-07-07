@@ -1,10 +1,4 @@
-const createString = (
-  chord: string,
-  s1: number,
-  s2: number,
-  s3: number,
-  s4: number,
-) => {
+const createString = (chord: string, s1: number, s2: number, s3: number, s4: number) => {
   let chordString = `.  ${chord}  .\n\n`;
   s1 === 0 ? (chordString += "○ ") : (chordString += `${s1} `);
   s2 === 0 ? (chordString += "○ ") : (chordString += `${s2} `);

@@ -11,17 +11,10 @@ import { IPracticeProps } from "./types";
 let buttonClicked = false;
 const clickButton = () => (buttonClicked = !buttonClicked);
 const classPicker = (classes) => {
-  return buttonClicked
-    ? classes.fullScreen + " " + classes.wholeDiv
-    : classes.partialScreen + " " + classes.wholeDiv;
+  return buttonClicked ? classes.fullScreen + " " + classes.wholeDiv : classes.partialScreen + " " + classes.wholeDiv;
 };
 
-const Practice = ({
-  classes,
-  chordCurrent,
-  chordNext,
-  onBeat,
-}: IPracticeProps) => (
+const Practice = ({ classes, chordCurrent, chordNext, onBeat }: IPracticeProps) => (
   <div className={classPicker(classes)}>
     <div className={classes.chordDiv}>
       <Chord chord={chordCurrent} />
@@ -49,14 +42,17 @@ const styles = {
   partialScreen: {
     width: "100%",
   },
-  wholeDiv: {
-    alignContent: "flext-start",
-    alignItems: "flex-start",
-    display: "flex",
-    flexDirection: "col",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-    outline: "1px solid black",
+  wholeDiv: ({ gridStyle }) => {
+    return {
+      alignContent: "flext-start",
+      alignItems: "flex-start",
+      display: "flex",
+      flexDirection: "col",
+      flexWrap: "wrap",
+      justifyContent: "space-around",
+      outline: "1px solid black",
+      ...gridStyle,
+    };
   },
 };
 

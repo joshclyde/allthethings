@@ -2,13 +2,7 @@ import * as React from "react";
 import injectSheet from "react-jss";
 import { connect } from "react-redux";
 
-import {
-  ADD_BPM,
-  DECREMENT_BPM,
-  INCREMENT_BPM,
-  INITIALIZE_METRONOME,
-  TICK,
-} from "./reducers";
+import { ADD_BPM, DECREMENT_BPM, INCREMENT_BPM, INITIALIZE_METRONOME, TICK } from "./reducers";
 import Settings from "./Settings";
 import TempoButton from "./TempoButton";
 import { IMetronomeProps } from "./types";
