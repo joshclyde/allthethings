@@ -8,18 +8,21 @@ import Metronome from "../Metronome";
 import { NEXT_CHORD } from "./reducers";
 import { IPracticeProps } from "./types";
 
+let buttonClicked = false;
+const clickButton = () => buttonClicked = !buttonClicked;
 const Practice = ({
   classes,
   chordCurrent,
   chordNext,
   onBeat,
 }: IPracticeProps) => (
-  <div className={classes.wholeDiv}>
+  <div className={buttonClicked ? classes.fullScreen + " " + classes.wholeDiv : classes.partialScreen + " " + classes.wholeDiv}>
     <div className={classes.chordDiv}>
       <Chord chord={chordCurrent} />
       <Chord chord={chordNext} />
     </div>
     <Metronome onBeat={onBeat} />
+    <button onClick={clickButton}>Click here</button>
   </div>
 );
 
@@ -33,6 +36,13 @@ const styles = {
     justifyContent: "space-around",
     width: 300,
   },
+  fullScreen: {
+    height: "calc(100vh - 18px)",
+    width: "calc(100vw - 18px)",
+  },
+  partialScreen: {
+    width: 300,
+  },
   wholeDiv: {
     alignContent: "flext-start",
     alignItems: "flex-start",
@@ -41,7 +51,7 @@ const styles = {
     flexDirection: "col",
     flexWrap: "wrap",
     justifyContent: "space-around",
-    width: 300,
+    margin: "8px",
   },
 };
 
