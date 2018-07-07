@@ -1,6 +1,6 @@
 {
   "extends": ["tslint:recommended", "tslint-react"],
-  "compilerOptions": {
-    "noImplicitAny": false
+  "rules": {
+    "no-unused-variable": true
   }
 }
