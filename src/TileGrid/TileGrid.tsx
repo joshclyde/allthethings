@@ -1,8 +1,11 @@
+import * as Mousetrap from "mousetrap";
 import * as React from "react";
 import injectSheet from "react-jss";
 import Tile, { TileOption } from "../Tile";
 
 import { ITileGridProps } from "./types";
+
+// Mousetrap.bind("4", () => console.log("4"));
 
 const theTiles = [TileOption.Practice, TileOption.Spotify];
 // TODO: instead of 0s and 1s should be using enums, buts its not as visually pleasing

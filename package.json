@@ -22,9 +22,11 @@
   },
   "homepage": "https://github.com/joshclyde/allthethings#readme",
   "dependencies": {
+    "@types/mousetrap": "1.6.0",
     "@types/react": "16.3.17",
     "@types/react-dom": "16.0.6",
     "@types/react-redux": "6.0.2",
+    "mousetrap": "1.6.0",
     "react": "16.4.0",
     "react-dom": "16.4.0",
     "react-jss": "8.5.1",
