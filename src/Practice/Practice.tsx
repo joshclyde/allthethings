@@ -9,14 +9,20 @@ import { NEXT_CHORD } from "./reducers";
 import { IPracticeProps } from "./types";
 
 let buttonClicked = false;
-const clickButton = () => buttonClicked = !buttonClicked;
+const clickButton = () => (buttonClicked = !buttonClicked);
+const classPicker = (classes) => {
+  return buttonClicked
+    ? classes.fullScreen + " " + classes.wholeDiv
+    : classes.partialScreen + " " + classes.wholeDiv;
+};
+
 const Practice = ({
   classes,
   chordCurrent,
   chordNext,
   onBeat,
 }: IPracticeProps) => (
-  <div className={buttonClicked ? classes.fullScreen + " " + classes.wholeDiv : classes.partialScreen + " " + classes.wholeDiv}>
+  <div className={classPicker(classes)}>
     <div className={classes.chordDiv}>
       <Chord chord={chordCurrent} />
       <Chord chord={chordNext} />
