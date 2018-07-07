@@ -40,24 +40,23 @@ const styles = {
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-around",
-    width: 300,
+    width: "100%",
   },
   fullScreen: {
     height: "calc(100vh - 18px)",
     width: "calc(100vw - 18px)",
   },
   partialScreen: {
-    width: 300,
+    width: "100%",
   },
   wholeDiv: {
     alignContent: "flext-start",
     alignItems: "flex-start",
-    border: "1px solid black",
     display: "flex",
     flexDirection: "col",
     flexWrap: "wrap",
     justifyContent: "space-around",
-    margin: "8px",
+    outline: "1px solid black",
   },
 };
 
