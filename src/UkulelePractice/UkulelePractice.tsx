@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import Chord from "./Chord";
 import { randomChord } from "./Chord/utils";
 import Metronome from "./Metronome";
-import { NEXT_CHORD, selectors } from "./reducers";
+import { selectors, setNextChord } from "./reducers";
 import { IUkulelePracticeProps } from "./types";
 
 let buttonClicked = false;
@@ -66,7 +66,7 @@ const mapStateToProps = (state: any, props: any) => {
 const mapDispatchToProps = (dispatch: any, props: any) => {
   return {
     onBeat: () => {
-      dispatch({ type: NEXT_CHORD, chord: randomChord() });
+      dispatch(setNextChord(randomChord()));
     },
   };
 };

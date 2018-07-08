@@ -1,9 +1,7 @@
 import * as React from "react";
-import injectSheet from "react-jss";
-
 import { ISettingsProps } from "./types";
 
-const Settings = ({ classes, onClickDown, onClickUp, onClickDownDown, onClickUpUp }: ISettingsProps) => (
+const Settings = ({ onClickDown, onClickUp, onClickDownDown, onClickUpUp }: ISettingsProps) => (
   <div>
     <div>
       <button type="button" onClick={onClickDown}>
@@ -24,7 +22,4 @@ const Settings = ({ classes, onClickDown, onClickUp, onClickDownDown, onClickUpU
   </div>
 );
 
-const styles = {};
-
-// export default SmartSettings;
-export default injectSheet(styles)(Settings);
+export default Settings;

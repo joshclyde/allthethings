@@ -15,7 +15,7 @@ const TempoButton = ({ classes }: ITempoButtonProps) => (
 const styles = {
   back: {
     opacity: 0.3,
-    r: (props) => Math.max(props.alpha * 25, 0),
+    r: ({ alpha }) => Math.max(alpha * 25, 0),
   },
   both: {
     cx: 25,

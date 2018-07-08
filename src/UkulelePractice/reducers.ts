@@ -1,6 +1,14 @@
-export const NEXT_CHORD = "NEXT_CHORD";
+// actions and action creators
+const SET_NEXT_CHORD = "SET_NEXT_CHORD";
+export const setNextChord = (chord: string) => {
+  return {
+    type: SET_NEXT_CHORD,
+    chord,
+  };
+};
 
-const reducers = (
+// reducers
+export const practice = (
   state = {
     chordCurrent: "C",
     chordNext: "G",
@@ -11,7 +19,7 @@ const reducers = (
   },
 ) => {
   switch (action.type) {
-    case NEXT_CHORD:
+    case SET_NEXT_CHORD:
       return {
         ...state,
         chordCurrent: state.chordNext,
@@ -24,14 +32,13 @@ const reducers = (
   }
 };
 
+// selectors
 const getPractice = (state) => state.practice || {};
 const getChordCurrent = (state) => getPractice(state).chordCurrent;
 const getChordNext = (state) => getPractice(state).chordNext;
 
-const selectors = {
+export const selectors = {
   getPractice,
   getChordCurrent,
   getChordNext,
 };
-
-export { reducers as practice, selectors };
