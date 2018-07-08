@@ -2,7 +2,9 @@ import * as React from "react";
 import injectSheet from "react-jss";
 import { connect } from "react-redux";
 
-import { ADD_BPM, DECREMENT_BPM, INCREMENT_BPM, INITIALIZE_METRONOME, TICK } from "./reducers";
+// import { ADD_BPM, DECREMENT_BPM, INCREMENT_BPM, INIT_METRONOME, TICK } from "./reducers";
+import { addBpm, decrementBpm, incrementBpm, initMetronome, tick as tickAction } from "./reducers";
+
 import Settings from "./Settings";
 import TempoButton from "./TempoButton";
 import { IMetronomeProps } from "./types";
@@ -98,22 +100,28 @@ const mapStateToProps = (state: any) => {
 const mapDispatchToProps = (dispatch: any) => {
   return {
     initialize: () => {
-      dispatch({ type: INITIALIZE_METRONOME, time: Date.now(), bpm: 120 });
+      // dispatch({ type: INIT_METRONOME, time: Date.now(), bpm: 120 });
+      dispatch(initMetronome(120));
     },
     onClickDown: () => {
-      dispatch({ type: DECREMENT_BPM });
+      // dispatch({ type: DECREMENT_BPM });
+      dispatch(decrementBpm());
     },
     onClickDownDown: () => {
-      dispatch({ type: ADD_BPM, bpmNumber: -10 });
+      // dispatch({ type: ADD_BPM, bpmNumber: -10 });
+      dispatch(addBpm(-10));
     },
     onClickUp: () => {
-      dispatch({ type: INCREMENT_BPM });
+      // dispatch({ type: INCREMENT_BPM });
+      dispatch(incrementBpm());
     },
     onClickUpUp: () => {
-      dispatch({ type: ADD_BPM, bpmNumber: 10 });
+      // dispatch({ type: ADD_BPM, bpmNumber: 10 });
+      dispatch(addBpm(10));
     },
     tick: () => {
-      dispatch({ type: TICK, time: Date.now() });
+      // dispatch({ type: TICK, time: Date.now() });
+      dispatch(tickAction());
     },
   };
 };
