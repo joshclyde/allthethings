@@ -1,11 +1,6 @@
 // actions and action creators
 const SET_NEXT_CHORD = "SET_NEXT_CHORD";
-export const setNextChord = (chord: string) => {
-  return {
-    type: SET_NEXT_CHORD,
-    chord,
-  };
-};
+export const setNextChord = (chord: string) => ({ type: SET_NEXT_CHORD, chord });
 
 // reducers
 export const practice = (

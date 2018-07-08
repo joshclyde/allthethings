@@ -2,17 +2,15 @@ import * as React from "react";
 import injectSheet from "react-jss";
 import { connect } from "react-redux";
 
-// import { ADD_BPM, DECREMENT_BPM, INCREMENT_BPM, INIT_METRONOME, TICK } from "./reducers";
-import { addBpm, decrementBpm, incrementBpm, initMetronome, tick as tickAction } from "./reducers";
-
+import { addBpm, decrementBpm, incrementBpm, initMetronome, selectors, tick as tickAction } from "./reducers";
 import Settings from "./Settings";
 import TempoButton from "./TempoButton";
-import { IMetronomeProps } from "./types";
+import { IDispatchToProps, IMetronomeProps, IProps, IStateToProps } from "./types";
 
 let prevBeat;
 
-class Metronome extends React.Component<IMetronomeProps, { timer: any }> {
-  constructor(props: IMetronomeProps) {
+class Metronome extends React.Component<IProps, { timer: any }> {
+  constructor(props: IProps) {
     super(props);
 
     const { initialize, tick, bpm, beat } = this.props;
@@ -45,25 +43,16 @@ class Metronome extends React.Component<IMetronomeProps, { timer: any }> {
   }
 
   public render() {
-    const {
-      classes,
-      beat,
-      bpm,
-      previousTick,
-      currentTick,
-      onClickDown,
-      onClickUp,
-      onClickUpUp,
-      onClickDownDown,
-    } = this.props;
-    const showLength = 400;
+    const { classes, beat, bpm, onClickDown, onClickUp, onClickUpUp, onClickDownDown } = this.props;
+    // const showLength = 400;
     // const opacity = Math.sqrt(Math.max((showLength - (currentTick - previousTick)) / showLength, 0));
-    const opacity = (showLength - (currentTick - previousTick)) / showLength;
+    // const opacity = (showLength - (currentTick - previousTick)) / showLength;
     // const radius = Math.max(opacity * 25, 0);
+    // TODO: opacity
     return (
       <div className={classes.wholeDiv}>
         {beat + 1} - {bpm}
-        <TempoButton alpha={opacity} />
+        <TempoButton alpha="0" />
         <Settings
           onClickDown={onClickDown}
           onClickUp={onClickUp}
@@ -74,9 +63,9 @@ class Metronome extends React.Component<IMetronomeProps, { timer: any }> {
     );
   }
 }
+
 const styles = {
   wholeDiv: {
-    // width: 300,
     alignContent: "flext-start",
     alignItems: "flex-start",
     display: "flex",
@@ -86,59 +75,26 @@ const styles = {
   },
 };
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: any): IStateToProps => {
   return {
-    beat: state.metronome.beat,
-    bpm: state.metronome.bpm,
-    currentTick: state.metronome.currentTick,
-    nextTick: state.metronome.nextTick,
-    previousTick: state.metronome.previousTick,
-    timeNumerator: state.metronome.timeNumerator,
+    beat: selectors.getBeat(state),
+    bpm: selectors.getBpm(state),
+    timeNumerator: selectors.getTimeNumerator(state),
   };
 };
 
-const mapDispatchToProps = (dispatch: any) => {
+const mapDispatchToProps = (dispatch: any): IDispatchToProps => {
   return {
-    initialize: () => {
-      // dispatch({ type: INIT_METRONOME, time: Date.now(), bpm: 120 });
-      dispatch(initMetronome(120));
-    },
-    onClickDown: () => {
-      // dispatch({ type: DECREMENT_BPM });
-      dispatch(decrementBpm());
-    },
-    onClickDownDown: () => {
-      // dispatch({ type: ADD_BPM, bpmNumber: -10 });
-      dispatch(addBpm(-10));
-    },
-    onClickUp: () => {
-      // dispatch({ type: INCREMENT_BPM });
-      dispatch(incrementBpm());
-    },
-    onClickUpUp: () => {
-      // dispatch({ type: ADD_BPM, bpmNumber: 10 });
-      dispatch(addBpm(10));
-    },
-    tick: () => {
-      // dispatch({ type: TICK, time: Date.now() });
-      dispatch(tickAction());
-    },
+    initialize: () => dispatch(initMetronome(120)),
+    onClickDown: () => dispatch(decrementBpm()),
+    onClickDownDown: () => dispatch(addBpm(-10)),
+    onClickUp: () => dispatch(incrementBpm()),
+    onClickUpUp: () => dispatch(addBpm(10)),
+    tick: () => dispatch(tickAction()),
   };
 };
 
-// const SmartMetronome = compose(
-//   connect(
-//     mapStateToProps,
-//     mapDispatchToProps,
-//   ),
-//   injectSheet(styles),
-//   Metronome,
-// ) as any;
-
-const temp = injectSheet(styles)(Metronome);
-export default connect(
+export default connect<IStateToProps, IDispatchToProps, IMetronomeProps>(
   mapStateToProps,
   mapDispatchToProps,
-)(temp);
-
-// export default SmartMetronome;
+)(injectSheet(styles)(Metronome));
