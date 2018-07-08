@@ -24,4 +24,14 @@ const reducers = (
   }
 };
 
-export default reducers;
+const getPractice = (state) => state.practice || {};
+const getChordCurrent = (state) => getPractice(state).chordCurrent;
+const getChordNext = (state) => getPractice(state).chordNext;
+
+const selectors = {
+  getPractice,
+  getChordCurrent,
+  getChordNext,
+};
+
+export { reducers as practice, selectors };

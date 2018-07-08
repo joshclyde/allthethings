@@ -1,0 +1,18 @@
+GET
+https://accounts.spotify.com/authorize?client_id=16cca5036837400b84f4e9a5ac3e619a&response_type=code&redirect_uri=https%3A%2F%2Fexample.com%2Fcallback&scope=user-library-read
+
+AQDf3446QF4FCMIQqmV8KcGL39hpPWMMtDBiZetJorG7run_pzJXogsDOLUrYhNgaJjlFRCXItl5bNiIrnBHyaiwcnZcds3Hmo_V_Ot-MPZl_8VPqeY1DKbYiojCrM6r6JsKDUXDB9PzlB0sVnl79v3ykb6RmWXuH2sBZnsmL9AF-DU4hHRVrbeTXqJBTB1MuJ84PnHUJ0_yg75lqmxYSzw6Foyy
+
+POST
+https://accounts.spotify.com/api/token
+
+{
+  grant_type: authorization_code
+  code: {authorization_code}
+  redirect_uri: https%3A%2F%2Fexample.com%2Fcallback
+  client_id: 16cca5036837400b84f4e9a5ac3e619a
+  client_secret: 26cd5af45fb741be9967a770f9890e5d
+}
+
+curl -d grant_type=authorization_code -d code=AQDf3446QF4FCMIQqmV8KcGL39hpPWMMtDBiZetJorG7run_pzJXogsDOLUrYhNgaJjlFRCXItl5bNiIrnBHyaiwcnZcds3Hmo_V_Ot-MPZl_8VPqeY1DKbYiojCrM6r6JsKDUXDB9PzlB0sVnl79v3ykb6RmWXuH2sBZnsmL9AF-DU4hHRVrbeTXqJBTB1MuJ84PnHUJ0_yg75lqmxYSzw6Foyy -d redirect_uri=https%3A%2F%2Fexample.com%2Fcallback -d client_id=16cca5036837400b84f4e9a5ac3e619a -d client_secret=26cd5af45fb741be9967a770f9890e5d https://accounts.spotify.com/api/token
+curl -X GET "https://api.spotify.com/v1/me/albums" -H "Authorization: Bearer BQBoy7cXe5TZ745dOR8b-Tjz9qkOPsZbjAdSedtmb7wyQJ9mbP2rtNbpfTEAZWFpHZpO8qFNQmihRnZTwLxhX6KY3G17MFYS62kmFeCGEeSsGqwuSXU4IIjoA-1l2if-5Zs0af4NB73zDuHE5jMEhzF0-Ibo1g"

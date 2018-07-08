@@ -36,7 +36,7 @@ const TileOptionsSwitch = (option: ITileProps["option"], gridStyle: any) => {
     case TileOption.Practice:
       return <Practice gridStyle={gridStyle} />;
     default:
-      return <div style={gridStyle}>hello there</div>;
+      return <input style={gridStyle} />;
   }
 };
 

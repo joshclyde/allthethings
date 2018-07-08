@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import Chord from "../Chord";
 import { randomChord } from "../Chord/utils";
 import Metronome from "../Metronome";
-import { NEXT_CHORD } from "./reducers";
+import { NEXT_CHORD, selectors } from "./reducers";
 import { IPracticeProps } from "./types";
 
 let buttonClicked = false;
@@ -58,8 +58,8 @@ const styles = {
 
 const mapStateToProps = (state: any, props: any) => {
   return {
-    chordCurrent: state.practice.chordCurrent,
-    chordNext: state.practice.chordNext,
+    chordCurrent: selectors.getChordCurrent(state),
+    chordNext: selectors.getChordNext(state),
   };
 };
 
