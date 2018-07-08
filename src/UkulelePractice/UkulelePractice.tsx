@@ -2,11 +2,11 @@ import * as React from "react";
 import injectSheet from "react-jss";
 import { connect } from "react-redux";
 
-import Chord from "../Chord";
-import { randomChord } from "../Chord/utils";
-import Metronome from "../Metronome";
+import Chord from "./Chord";
+import { randomChord } from "./Chord/utils";
+import Metronome from "./Metronome";
 import { NEXT_CHORD, selectors } from "./reducers";
-import { IPracticeProps } from "./types";
+import { IUkulelePracticeProps } from "./types";
 
 let buttonClicked = false;
 const clickButton = () => (buttonClicked = !buttonClicked);
@@ -14,7 +14,7 @@ const classPicker = (classes) => {
   return buttonClicked ? classes.fullScreen + " " + classes.wholeDiv : classes.partialScreen + " " + classes.wholeDiv;
 };
 
-const Practice = ({ classes, chordCurrent, chordNext, onBeat }: IPracticeProps) => (
+const UkulelePractice = ({ classes, chordCurrent, chordNext, onBeat }: IUkulelePracticeProps) => (
   <div className={classPicker(classes)}>
     <div className={classes.chordDiv}>
       <Chord chord={chordCurrent} />
@@ -80,7 +80,7 @@ const mapDispatchToProps = (dispatch: any, props: any) => {
 //   Practice,
 // ) as any;
 
-const temp = injectSheet(styles)(Practice);
+const temp = injectSheet(styles)(UkulelePractice);
 export default connect(
   mapStateToProps,
   mapDispatchToProps,

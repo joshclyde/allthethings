@@ -58,4 +58,4 @@ const reducers = (
   }
 };
 
-export default reducers;
+export { reducers as metronome };

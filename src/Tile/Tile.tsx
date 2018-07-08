@@ -1,7 +1,7 @@
 import * as React from "react";
 import injectSheet from "react-jss";
 
-import Practice from "../Practice";
+import Practice from "../UkulelePractice";
 import { ITileProps, TileOption } from "./types";
 
 // TODO: try and make this function not as long

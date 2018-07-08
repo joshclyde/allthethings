@@ -1,4 +1,4 @@
-export interface IPracticeProps {
+export interface IUkulelePracticeProps {
   classes: any;
   gridStyle: any;
   chordCurrent: string;
