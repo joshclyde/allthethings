@@ -7,7 +7,7 @@ import Chord from "./Chord";
 import { randomChord } from "./Chord/utils";
 import Metronome from "./Metronome";
 import { selectors, setNextChord } from "./reducers";
-import { IUkulelePracticeProps } from "./types";
+import { IDispatchToProps, IProps, IStateToProps, IUkulelePracticeProps } from "./types";
 
 let buttonClicked = false;
 const clickButton = () => (buttonClicked = !buttonClicked);
@@ -17,7 +17,7 @@ const classPicker = (classes) => {
     : multiclass(classes.partialScreen, classes.wholeDiv);
 };
 
-const UkulelePractice = ({ classes, chordCurrent, chordNext, onBeat }: IUkulelePracticeProps) => (
+const UkulelePractice = ({ classes, chordCurrent, chordNext, onBeat }: IProps) => (
   <div className={classPicker(classes)}>
     <div className={classes.chordDiv}>
       <Chord chord={chordCurrent} />
@@ -59,34 +59,16 @@ const styles = {
   },
 };
 
-const mapStateToProps = (state: any, props: any) => {
-  return {
-    chordCurrent: selectors.getChordCurrent(state),
-    chordNext: selectors.getChordNext(state),
-  };
-};
+const mapStateToProps = (state: any): IStateToProps => ({
+  chordCurrent: selectors.getChordCurrent(state),
+  chordNext: selectors.getChordNext(state),
+});
 
-const mapDispatchToProps = (dispatch: any, props: any) => {
-  return {
-    onBeat: () => {
-      dispatch(setNextChord(randomChord()));
-    },
-  };
-};
+const mapDispatchToProps = (dispatch: any): IDispatchToProps => ({
+  onBeat: () => dispatch(setNextChord(randomChord())),
+});
 
-// const SmartPractice = compose(
-//   connect(
-//     mapStateToProps,
-//     mapDispatchToProps,
-//   ),
-//   injectSheet(styles),
-//   Practice,
-// ) as any;
-
-const temp = injectSheet(styles)(UkulelePractice);
-export default connect(
+export default connect<IStateToProps, IDispatchToProps, IUkulelePracticeProps>(
   mapStateToProps,
   mapDispatchToProps,
-)(temp);
-
-// export default SmartPractice;
+)(injectSheet(styles)(UkulelePractice));

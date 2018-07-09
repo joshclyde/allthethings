@@ -2,28 +2,37 @@
 const SET_NEXT_CHORD = "SET_NEXT_CHORD";
 export const setNextChord = (chord: string) => ({ type: SET_NEXT_CHORD, chord });
 
+// types of state and actions
+interface IState {
+  chordCurrent: string;
+  chordNext: string;
+}
+
+interface IActions {
+  type: string;
+  chord: string;
+}
+
+// initial state
+const initialState: IState = {
+  chordCurrent: "C",
+  chordNext: "G",
+};
+
+// reducer functions
+const doSetNextChord = (state: IState, chord: string) => ({
+  ...state,
+  chordCurrent: chord,
+  chordNext: state.chordCurrent,
+});
+
 // reducers
-export const practice = (
-  state = {
-    chordCurrent: "C",
-    chordNext: "G",
-  },
-  action: {
-    type: undefined;
-    chord: undefined;
-  },
-) => {
+export const practice = (state = initialState, action: IActions) => {
   switch (action.type) {
     case SET_NEXT_CHORD:
-      return {
-        ...state,
-        chordCurrent: state.chordNext,
-        chordNext: action.chord,
-      };
+      return doSetNextChord(state, action.chord);
     default:
-      return {
-        ...state,
-      };
+      return { ...state };
   }
 };
 
