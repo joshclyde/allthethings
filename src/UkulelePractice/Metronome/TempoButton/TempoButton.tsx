@@ -3,16 +3,18 @@ import injectSheet from "react-jss";
 import { ITempoButtonProps } from "./types";
 
 const TempoButton = ({ classes }: ITempoButtonProps) => (
-  <div>
-    <svg height="50" width="50">
-      <circle className={`${classes.both} ${classes.back}`} />
-      <circle className={`${classes.both} ${classes.front}`} />
-      Sorry, your browser does not support inline SVG.
-    </svg>
-  </div>
+  <svg className={classes.svg}>
+    <circle className={`${classes.both} ${classes.back}`} />
+    <circle className={`${classes.both} ${classes.front}`} />
+    Sorry, your browser does not support inline SVG.
+  </svg>
 );
 
 const styles = {
+  svg: {
+    height: 50,
+    width: 50,
+  },
   back: {
     opacity: 0.3,
     r: ({ alpha }) => Math.max(alpha * 25, 0),
