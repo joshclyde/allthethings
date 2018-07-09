@@ -2,6 +2,7 @@ import * as React from "react";
 import injectSheet from "react-jss";
 import { connect } from "react-redux";
 
+import { multiclass } from "../utils";
 import Chord from "./Chord";
 import { randomChord } from "./Chord/utils";
 import Metronome from "./Metronome";
@@ -11,7 +12,9 @@ import { IUkulelePracticeProps } from "./types";
 let buttonClicked = false;
 const clickButton = () => (buttonClicked = !buttonClicked);
 const classPicker = (classes) => {
-  return buttonClicked ? classes.fullScreen + " " + classes.wholeDiv : classes.partialScreen + " " + classes.wholeDiv;
+  return buttonClicked
+    ? multiclass(classes.fullScreen, classes.wholeDiv)
+    : multiclass(classes.partialScreen, classes.wholeDiv);
 };
 
 const UkulelePractice = ({ classes, chordCurrent, chordNext, onBeat }: IUkulelePracticeProps) => (

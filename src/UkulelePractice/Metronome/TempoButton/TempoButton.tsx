@@ -1,11 +1,12 @@
 import * as React from "react";
 import injectSheet from "react-jss";
+import { multiclass } from "../../../utils";
 import { ITempoButtonProps } from "./types";
 
 const TempoButton = ({ classes }: ITempoButtonProps) => (
   <svg className={classes.svg}>
-    <circle className={`${classes.both} ${classes.back}`} />
-    <circle className={`${classes.both} ${classes.front}`} />
+    <circle className={multiclass(classes.both, classes.back)} />
+    <circle className={multiclass(classes.both, classes.front)} />
     Sorry, your browser does not support inline SVG.
   </svg>
 );
