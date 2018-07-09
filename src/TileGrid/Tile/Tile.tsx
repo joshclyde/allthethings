@@ -2,7 +2,7 @@ import * as React from "react";
 // @ts-ignore: don't have a types file for jss
 import injectSheet from "react-jss";
 
-import Practice from "../UkulelePractice";
+import Practice from "../../UkulelePractice";
 import { ITileProps, TileOption } from "./types";
 
 // TODO: try and make this function not as long

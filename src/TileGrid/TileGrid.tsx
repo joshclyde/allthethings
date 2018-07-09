@@ -2,7 +2,7 @@ import * as React from "react";
 // import * as Mousetrap from "mousetrap";
 // @ts-ignore: don't have a types file for jss
 import injectSheet from "react-jss";
-import Tile, { TileOption } from "../Tile";
+import Tile, { TileOption } from "./Tile";
 
 import { IProps } from "./types";
 
