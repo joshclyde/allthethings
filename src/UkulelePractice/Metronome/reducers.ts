@@ -85,7 +85,7 @@ export interface IState {
   metronome: IMetronomeState;
 }
 
-const getMetronome = (state: IState): IMetronomeState => state.metronome || {} as IMetronomeState;
+const getMetronome = (state: IState): IMetronomeState => state.metronome || ({} as IMetronomeState);
 const getBeat = (state: IState) => getMetronome(state).beat;
 const getBpm = (state: IState) => getMetronome(state).bpm;
 const getTimeNumerator = (state: IState) => getMetronome(state).timeNumerator;

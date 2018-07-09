@@ -38,7 +38,7 @@ interface IFullState {
   yourReducerName: IState;
 }
 
-const getYourReducerName = (state: IFullState) => state.yourReducerName || {} as IState;
+const getYourReducerName = (state: IFullState) => state.yourReducerName || ({} as IState);
 const getStateVar = (state: IFullState) => getYourReducerName(state).stateVar;
 
 export const selectors = {

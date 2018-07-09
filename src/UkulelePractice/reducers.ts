@@ -41,7 +41,7 @@ export interface IState {
   practice: IPracticeState;
 }
 
-const getPractice = (state: IState) => state.practice || {} as IPracticeState;
+const getPractice = (state: IState) => state.practice || ({} as IPracticeState);
 const getChordCurrent = (state: IState) => getPractice(state).chordCurrent;
 const getChordNext = (state: IState) => getPractice(state).chordNext;
 
