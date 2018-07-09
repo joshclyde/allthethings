@@ -1,9 +1,10 @@
-// import * as Mousetrap from "mousetrap";
 import * as React from "react";
+// import * as Mousetrap from "mousetrap";
+// @ts-ignore: don't have a types file for jss
 import injectSheet from "react-jss";
 import Tile, { TileOption } from "../Tile";
 
-import { ITileGridProps } from "./types";
+import { IProps } from "./types";
 
 // Mousetrap.bind("4", () => console.log("4"), "keyup");
 
@@ -15,7 +16,7 @@ const theGrid = [
   [0, 1],
 ];
 
-const TileGrid = ({ classes, height, width }: ITileGridProps) => (
+const TileGrid = ({ classes, height, width }: IProps) => (
   <div className={classes.baseGrid}>
     {theTiles.map((option: TileOption) => (
       <Tile key={option} grid={theGrid} option={option} height={height} width={width} />
@@ -26,8 +27,8 @@ const TileGrid = ({ classes, height, width }: ITileGridProps) => (
 const styles = {
   baseGrid: {
     display: "grid",
-    gridTemplateColumns: ({ width }) => `repeat(${theGrid[0].length}, ${width / theGrid[0].length}px)`,
-    gridTemplateRows: ({ height }) => `repeat(${theGrid.length}, ${height / theGrid.length}px)`,
+    gridTemplateColumns: ({ width }: IProps) => `repeat(${theGrid[0].length}, ${width / theGrid[0].length}px)`,
+    gridTemplateRows: ({ height }: IProps) => `repeat(${theGrid.length}, ${height / theGrid.length}px)`,
     justifyContent: "center",
   },
 };

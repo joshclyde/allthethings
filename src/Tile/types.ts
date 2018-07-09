@@ -5,7 +5,5 @@ export enum TileOption {
 
 export interface ITileProps {
   option: TileOption;
-  grid: number[][];
-  width: number;
-  height: number;
+  grid: TileOption[][];
 }

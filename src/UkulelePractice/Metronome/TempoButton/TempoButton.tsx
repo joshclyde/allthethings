@@ -1,9 +1,10 @@
 import * as React from "react";
+// @ts-ignore: don't have a types file for jss
 import injectSheet from "react-jss";
 import { multiclass } from "../../../utils";
-import { ITempoButtonProps } from "./types";
+import { IProps } from "./types";
 
-const TempoButton = ({ classes }: ITempoButtonProps) => (
+const TempoButton = ({ classes }: IProps) => (
   <svg className={classes.svg}>
     <circle className={multiclass(classes.both, classes.back)} />
     <circle className={multiclass(classes.both, classes.front)} />
@@ -18,7 +19,7 @@ const styles = {
   },
   back: {
     opacity: 0.3,
-    r: ({ alpha }) => Math.max(alpha * 25, 0),
+    r: ({ alpha }: IProps) => Math.max(alpha * 25, 0),
   },
   both: {
     cx: 25,

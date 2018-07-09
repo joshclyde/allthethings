@@ -1,17 +1,18 @@
 import * as React from "react";
+// @ts-ignore: don't have a types file for jss
 import injectSheet from "react-jss";
-import { connect } from "react-redux";
+import { connect, Dispatch } from "react-redux";
 
 import { multiclass } from "../utils";
 import Chord from "./Chord";
 import { randomChord } from "./Chord/utils";
 import Metronome from "./Metronome";
-import { selectors, setNextChord } from "./reducers";
-import { IDispatchToProps, IProps, IStateToProps, IUkulelePracticeProps } from "./types";
+import { IState, selectors, setNextChord } from "./reducers";
+import { IDispatchToProps, IProps, IStateToProps, IStyle, IUkulelePracticeProps } from "./types";
 
 let buttonClicked = false;
 const clickButton = () => (buttonClicked = !buttonClicked);
-const classPicker = (classes) => {
+const classPicker = (classes: IStyle["classes"]) => {
   return buttonClicked
     ? multiclass(classes.fullScreen, classes.wholeDiv)
     : multiclass(classes.partialScreen, classes.wholeDiv);
@@ -45,7 +46,7 @@ const styles = {
   partialScreen: {
     width: "100%",
   },
-  wholeDiv: ({ gridStyle }) => {
+  wholeDiv: ({ gridStyle }: IProps) => {
     return {
       alignContent: "flext-start",
       alignItems: "flex-start",
@@ -59,12 +60,12 @@ const styles = {
   },
 };
 
-const mapStateToProps = (state: any): IStateToProps => ({
+const mapStateToProps = (state: IState): IStateToProps => ({
   chordCurrent: selectors.getChordCurrent(state),
   chordNext: selectors.getChordNext(state),
 });
 
-const mapDispatchToProps = (dispatch: any): IDispatchToProps => ({
+const mapDispatchToProps = (dispatch: Dispatch): IDispatchToProps => ({
   onBeat: () => dispatch(setNextChord(randomChord())),
 });
 

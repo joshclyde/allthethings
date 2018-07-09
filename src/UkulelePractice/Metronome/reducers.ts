@@ -18,7 +18,7 @@ export const SET_TIME_NUMERATOR = "SET_TIME_NUMERATOR";
 export const setTimeNumerator = (timeNumerator: number) => ({ type: SET_TIME_NUMERATOR, timeNumerator });
 
 // types of state and actions
-interface IState {
+interface IMetronomeState {
   beat: number;
   bpm: number;
   timeNumerator: number;
@@ -32,29 +32,29 @@ interface IActions {
 }
 
 // initial state
-const initialState: IState = {
+const initialState: IMetronomeState = {
   beat: 1,
   bpm: 120,
   timeNumerator: 4,
 };
 
 // reducer functions
-const doInitMetronome = (state: IState, bpm: number): IState => ({
+const doInitMetronome = (state: IMetronomeState, bpm: number): IMetronomeState => ({
   ...state,
   bpm,
 });
 
-const doTick = (state: IState): IState => ({
+const doTick = (state: IMetronomeState): IMetronomeState => ({
   ...state,
   beat: (state.beat + 1) % state.timeNumerator,
 });
 
-const doAddBpm = (state: IState, bpmAdd): IState => ({
+const doAddBpm = (state: IMetronomeState, bpmAdd: number): IMetronomeState => ({
   ...state,
   bpm: state.bpm + bpmAdd,
 });
 
-const doSetTimeNumerator = (state: IState, timeNumerator): IState => ({
+const doSetTimeNumerator = (state: IMetronomeState, timeNumerator: number): IMetronomeState => ({
   ...state,
   beat: 1,
   timeNumerator,
@@ -81,10 +81,14 @@ export const metronome = (state = initialState, action: IActions) => {
 };
 
 // selectors
-const getMetronome = (state): IState => state.metronome || {};
-const getBeat = (state) => getMetronome(state).beat;
-const getBpm = (state) => getMetronome(state).bpm;
-const getTimeNumerator = (state) => getMetronome(state).timeNumerator;
+export interface IState {
+  metronome: IMetronomeState;
+}
+
+const getMetronome = (state: IState): IMetronomeState => state.metronome || {} as IMetronomeState;
+const getBeat = (state: IState) => getMetronome(state).beat;
+const getBpm = (state: IState) => getMetronome(state).bpm;
+const getTimeNumerator = (state: IState) => getMetronome(state).timeNumerator;
 
 export const selectors = {
   getMetronome,

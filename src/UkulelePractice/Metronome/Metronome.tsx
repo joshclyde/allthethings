@@ -1,15 +1,16 @@
 import * as React from "react";
+// @ts-ignore: don't have a types file for jss
 import injectSheet from "react-jss";
-import { connect } from "react-redux";
+import { connect, Dispatch } from "react-redux";
 
-import { addBpm, decrementBpm, incrementBpm, initMetronome, selectors, tick as tickAction } from "./reducers";
+import { addBpm, decrementBpm, incrementBpm, initMetronome, IState, selectors, tick as tickAction } from "./reducers";
 import Settings from "./Settings";
 import TempoButton from "./TempoButton";
 import { IDispatchToProps, IMetronomeProps, IProps, IStateToProps } from "./types";
 
-let prevBeat;
+let prevBeat: number;
 
-class Metronome extends React.Component<IProps, { timer: any }> {
+class Metronome extends React.Component<IProps, {}> {
   constructor(props: IProps) {
     super(props);
 
@@ -36,10 +37,6 @@ class Metronome extends React.Component<IProps, { timer: any }> {
       }
       prevBeat = beat;
     }
-  }
-
-  public componentWillUnmount() {
-    clearInterval(this.state.timer);
   }
 
   public render() {
@@ -75,7 +72,7 @@ const styles = {
   },
 };
 
-const mapStateToProps = (state: any): IStateToProps => {
+const mapStateToProps = (state: IState): IStateToProps => {
   return {
     beat: selectors.getBeat(state),
     bpm: selectors.getBpm(state),
@@ -83,7 +80,7 @@ const mapStateToProps = (state: any): IStateToProps => {
   };
 };
 
-const mapDispatchToProps = (dispatch: any): IDispatchToProps => {
+const mapDispatchToProps = (dispatch: Dispatch): IDispatchToProps => {
   return {
     initialize: () => dispatch(initMetronome(120)),
     onClickDown: () => dispatch(decrementBpm()),

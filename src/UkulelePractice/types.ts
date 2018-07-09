@@ -7,10 +7,17 @@ export interface IDispatchToProps {
   onBeat(): void;
 }
 
-export interface IUkulelePracticeProps {
-  gridStyle: any;
+export interface IStyle {
+  classes: {
+    chordDiv: string;
+    fullScreen: string;
+    partialScreen: string;
+    wholeDiv: string;
+  };
 }
 
-export interface IProps extends IStateToProps, IDispatchToProps, IUkulelePracticeProps {
-  classes: any;
+export interface IUkulelePracticeProps {
+  gridStyle: object;
 }
+
+export interface IProps extends IStateToProps, IDispatchToProps, IStyle, IUkulelePracticeProps {}

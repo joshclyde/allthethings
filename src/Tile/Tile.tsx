@@ -1,11 +1,12 @@
 import * as React from "react";
+// @ts-ignore: don't have a types file for jss
 import injectSheet from "react-jss";
 
 import Practice from "../UkulelePractice";
 import { ITileProps, TileOption } from "./types";
 
 // TODO: try and make this function not as long
-const buildGridStyle = (grid, option) => {
+const buildGridStyle = (grid: TileOption[][], option: TileOption) => {
   let gridColumnEnd = 0;
   let gridColumnStart = -1;
   let gridRowEnd = 0;
@@ -31,7 +32,7 @@ const buildGridStyle = (grid, option) => {
   };
 };
 
-const TileOptionsSwitch = (option: ITileProps["option"], gridStyle: any) => {
+const TileOptionsSwitch = (option: TileOption, gridStyle: object) => {
   switch (option) {
     case TileOption.Practice:
       return <Practice gridStyle={gridStyle} />;
@@ -40,7 +41,7 @@ const TileOptionsSwitch = (option: ITileProps["option"], gridStyle: any) => {
   }
 };
 
-const Tile = ({ grid, option, width, height }: ITileProps) => TileOptionsSwitch(option, buildGridStyle(grid, option));
+const Tile = ({ grid, option }: ITileProps) => TileOptionsSwitch(option, buildGridStyle(grid, option));
 
 const styles = {};
 

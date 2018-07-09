@@ -1,7 +1,12 @@
+export interface IStyles {
+  classes: {
+    baseGrid: string;
+  };
+}
+
 export interface ITileGridProps {
-  classes: any;
   width: number;
   height: number;
-  grid: number[][];
-  tiles: any[];
 }
+
+export interface IProps extends IStyles, ITileGridProps {}

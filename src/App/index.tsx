@@ -1,19 +1,18 @@
 import * as React from "react";
 import { Provider } from "react-redux";
 import { combineReducers, createStore } from "redux";
-// import { reducers as metronomeReducers } from "../Metronome";
 import TileGrid from "../TileGrid";
 import { reducers as practiceReducers } from "../UkulelePractice";
 
 const reducers = combineReducers({
-  // chords: chordReducers,
   ...practiceReducers,
 });
 
-// https://github.com/zalmoxisus/redux-devtools-extension#11-basic-store
-// this line is so i can see the redux store
 const store = createStore(
-  reducers /* preloadedState, */,
+  reducers,
+  // https://github.com/zalmoxisus/redux-devtools-extension#11-basic-store
+  // this line is so i can see the redux store
+  // tslint:disable-next-line: no-any
   (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__(),
 );
 

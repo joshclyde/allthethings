@@ -13,10 +13,14 @@ export interface IDispatchToProps {
   onClickUpUp(): void;
 }
 
+export interface IStyle {
+  classes: {
+    wholeDiv: string;
+  };
+}
+
 export interface IMetronomeProps {
   onBeat(): void;
 }
 
-export interface IProps extends IStateToProps, IDispatchToProps, IMetronomeProps {
-  classes: any;
-}
+export interface IProps extends IStateToProps, IDispatchToProps, IMetronomeProps, IStyle {}

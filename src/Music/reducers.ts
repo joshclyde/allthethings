@@ -34,10 +34,14 @@ export const yourReducerName = (state = initialState, action: IActions) => {
 };
 
 // selectors
-const getYourReducerName = (state) => state.yourReducerName || {};
-const getActionVar = (state) => getYourReducerName(state).actionVar;
+interface IFullState {
+  yourReducerName: IState;
+}
+
+const getYourReducerName = (state: IFullState) => state.yourReducerName || {} as IState;
+const getStateVar = (state: IFullState) => getYourReducerName(state).stateVar;
 
 export const selectors = {
   getYourReducerName,
-  getActionVar,
+  getStateVar,
 };
