@@ -1,6 +1,6 @@
 export enum TileOption {
   Practice,
-  Spotify,
+  Music,
 }
 
 export interface ITileProps {

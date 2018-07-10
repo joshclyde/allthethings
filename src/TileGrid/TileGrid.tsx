@@ -8,12 +8,13 @@ import { IProps } from "./types";
 
 // Mousetrap.bind("4", () => console.log("4"), "keyup");
 
-const theTiles = [TileOption.Practice, TileOption.Spotify];
+const theTiles = [TileOption.Practice, TileOption.Music, 2];
 // TODO: instead of 0s and 1s should be using enums, buts its not as visually pleasing
 // prettier-ignore
 const theGrid = [
   [0, 1],
   [0, 1],
+  [2, 2],
 ];
 
 const TileGrid = ({ classes, height, width }: IProps) => (

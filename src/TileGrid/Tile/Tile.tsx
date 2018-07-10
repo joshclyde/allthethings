@@ -2,6 +2,7 @@ import * as React from "react";
 // @ts-ignore: don't have a types file for jss
 import injectSheet from "react-jss";
 
+import Music from "../../Music";
 import Practice from "../../UkulelePractice";
 import { ITileProps, TileOption } from "./types";
 
@@ -36,6 +37,8 @@ const TileOptionsSwitch = (option: TileOption, gridStyle: object) => {
   switch (option) {
     case TileOption.Practice:
       return <Practice gridStyle={gridStyle} />;
+    case TileOption.Music:
+      return <Music gridStyle={gridStyle} />;
     default:
       return <input style={gridStyle} />;
   }
