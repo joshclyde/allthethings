@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "./node_modules/.bin/tslint -p tsconfig.json \"src/**/*.{ts,tsx}\"",
     "precommit": "npm run prettier:diff && npm run lint",
@@ -26,11 +27,13 @@
     "@types/react": "16.3.17",
     "@types/react-dom": "16.0.6",
     "@types/react-redux": "6.0.2",
+    "@types/react-router-dom": "4.3.0",
     "mousetrap": "1.6.0",
     "react": "16.4.0",
     "react-dom": "16.4.0",
     "react-jss": "8.5.1",
     "react-redux": "5.0.7",
+    "react-router-dom": "4.3.1",
     "redux": "4.0.0"
   },
   "devDependencies": {

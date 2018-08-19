@@ -1,5 +1,6 @@
 export enum TileOption {
   Practice,
+  Flashcard,
   Music,
 }
 
