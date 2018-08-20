@@ -22,7 +22,7 @@ const createOnClick = (data: string | IBookmarkSingle[]): IBookmarkProps["onClic
 const getFavicon = (data: string | IBookmarkSingle[]): string => {
   if (typeof data === "string") {
     // better resolution, doesn't always get ico
-    console.log(data.replace(/(.*?[^\/])(\/[^\/].*)/, "$1/favicon.ico"));
+    // console.log(data.replace(/(.*?[^\/])(\/[^\/].*)/, "$1/favicon.ico"));
     return data.replace(/(.*?[^\/])(\/[^\/].*)/, "$1/favicon.ico");
 
     // worst resolution, basically always gets ico
@@ -30,7 +30,7 @@ const getFavicon = (data: string | IBookmarkSingle[]): string => {
     // console.log(`https://www.google.com/s2/favicons?domain_url=${dataURL.hostname}`);
     // return `https://www.google.com/s2/favicons?domain_url=${dataURL.hostname}`;
   } else {
-    console.log("https://png.icons8.com/cotton/64/000000/folder-invoices.png");
+    // console.log("https://png.icons8.com/cotton/64/000000/folder-invoices.png");
     return "https://png.icons8.com/cotton/64/000000/folder-invoices.png";
   }
 };
