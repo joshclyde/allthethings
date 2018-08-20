@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import { combineReducers, createStore } from "redux";
 
+import Bookmarks, { bookmarkData } from "../Bookmarks";
 import TileGrid from "../TileGrid";
 import { reducers as practiceReducers } from "../UkulelePractice";
 
@@ -21,7 +22,7 @@ const store = createStore(
 // const PracticeComponent = <UkulelePractice />;
 
 const RouteTileGrid = () => <TileGrid width={window.innerWidth} height={window.innerHeight} />;
-const RouteBookmarks = () => <div>This is the bookmark page</div>;
+const RouteBookmarks = () => <Bookmarks data={bookmarkData} />;
 const RouteHi = () => <div>ahisdhfliasjdklfjsadlkfj</div>;
 
 const App = () => (
