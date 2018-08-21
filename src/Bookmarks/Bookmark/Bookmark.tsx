@@ -6,19 +6,17 @@ import injectSheet from "react-jss";
 // import { IState, selectors, setNextChord } from "./reducers";
 import { IProps } from "./types";
 
-const Bookmark = ({ classes, imgSrc, name, onClick }: IProps) => (
-  <div className={classes.wholeDiv} onClick={onClick}>
-    <div>
-      <img src={imgSrc} />
-    </div>
-    {name}
+const Bookmark = ({ classes, imgSrc, name, onClick, hrefPath }: IProps) => (
+  <div onClick={onClick}>
+    <a className={classes.wholeDiv} href={hrefPath}>
+      <img src={imgSrc} width={20} height={20} />
+      {name}
+    </a>
   </div>
 );
 
 const styles = {
-  wholeDiv: {
-    padding: 20,
-  },
+  wholeDiv: {},
 };
 
 // const mapStateToProps = (state: IState): IStateToProps => ({

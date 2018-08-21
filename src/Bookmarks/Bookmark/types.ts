@@ -6,6 +6,7 @@ export interface IStyle {
 
 export interface IBookmarkProps {
   imgSrc: string;
+  hrefPath: string;
   name: string;
   onClick(): void;
 }

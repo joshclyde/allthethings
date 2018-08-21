@@ -1,13 +1,12 @@
 import * as React from "react";
 // @ts-ignore: don't have a types file for jss
 import injectSheet from "react-jss";
+import { connect, Dispatch } from "react-redux";
 
 import Bookmark from "./Bookmark";
-// import { connect, Dispatch } from "react-redux";
-// import { IState, selectors, setNextChord } from "./reducers";
-import { IBookmarkSingle, IProps } from "./types";
-
 import { IBookmarkProps } from "./Bookmark/types";
+import { IState, selectors, setBookmarkId } from "./reducers";
+import { IBookmarkSingle, IBookmarksProps, IDispatchToProps, IProps, IStateToProps } from "./types";
 
 // TODO: do this better maybe
 const createOnClick = (data: string | IBookmarkSingle[]): IBookmarkProps["onClick"] => {
@@ -35,10 +34,17 @@ const getFavicon = (data: string | IBookmarkSingle[]): string => {
   }
 };
 
-const Bookmarks = ({ classes, data }: IProps) => (
+const Bookmarks = ({ classes, bookmarkData }: IProps) => (
   <div className={classes.wholeDiv}>
-    {data.map(({ name, data: bookmarkData }) => {
-      return <Bookmark imgSrc={getFavicon(bookmarkData)} name={name} onClick={createOnClick(bookmarkData)} />;
+    {bookmarkData.map(({ name, data: bookmarkData2 }) => {
+      return (
+        <Bookmark
+          imgSrc={getFavicon(bookmarkData2)}
+          name={name}
+          onClick={createOnClick(bookmarkData2)}
+          hrefPath={typeof bookmarkData2 === "string" ? bookmarkData2 : undefined}
+        />
+      );
     })}
   </div>
 );
@@ -47,17 +53,18 @@ const styles = {
   wholeDiv: {},
 };
 
-// const mapStateToProps = (state: IState): IStateToProps => ({
-//   stateVar: selectors.getStateVar(state),
-// });
+const mapStateToProps = (state: IState): IStateToProps => ({
+  bookmarkData: selectors.getBookmarkData(state),
+  bookmarkId: selectors.getBookmarkId(state),
+});
 
-// const mapDispatchToProps = (dispatch: Dispatch): IDispatchToProps => ({
-//   dispatchFunction: () => dispatch({ type: "YOUR_ACTION" }),
-// });
+const mapDispatchToProps = (dispatch: Dispatch): IDispatchToProps => ({
+  onChangeBookmarkId: (bookmarkId: number) => dispatch(setBookmarkId(bookmarkId)),
+});
 
-// export default connect<IStateToProps, IDispatchToProps, IYourComponentProps>(
-//   mapStateToProps,
-//   mapDispatchToProps,
-// )(injectSheet(styles)(YourComponent));
+export default connect<IStateToProps, IDispatchToProps, IBookmarksProps>(
+  mapStateToProps,
+  mapDispatchToProps,
+)(injectSheet(styles)(Bookmarks));
 
-export default injectSheet(styles)(Bookmarks);
+// export default injectSheet(styles)(Bookmarks);

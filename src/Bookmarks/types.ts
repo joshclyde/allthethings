@@ -1,10 +1,11 @@
-// export interface IStateToProps {
-//   stateVar: string;
-// }
+export interface IStateToProps {
+  bookmarkData: IBookmarkSingle[];
+  bookmarkId: number;
+}
 
-// export interface IDispatchToProps {
-//   dispatchFunction(): void;
-// }
+export interface IDispatchToProps {
+  onChangeBookmarkId(bookmarkId: number): void;
+}
 
 export interface IStyle {
   classes: {
@@ -13,12 +14,13 @@ export interface IStyle {
 }
 
 export interface IBookmarksProps {
-  data: IBookmarkSingle[];
+  nothing: string;
 }
 
 export interface IBookmarkSingle {
+  id?: number;
   name: string;
   data: string | IBookmarkSingle[];
 }
 
-export interface IProps extends IStyle, IBookmarksProps {}
+export interface IProps extends IStateToProps, IStyle, IBookmarksProps {}
