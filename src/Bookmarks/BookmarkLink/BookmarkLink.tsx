@@ -6,7 +6,7 @@ import injectSheet from "react-jss";
 // import { IState, selectors, setNextChord } from "./reducers";
 import { IProps } from "./types";
 
-const Bookmark = ({ classes, imgSrc, name, onClick, hrefPath }: IProps) => (
+const BookmarkLink = ({ classes, imgSrc, name, onClick, hrefPath }: IProps) => (
   <div onClick={onClick}>
     <a className={classes.wholeDiv} href={hrefPath}>
       <img src={imgSrc} width={20} height={20} />
@@ -32,4 +32,4 @@ const styles = {
 //   mapDispatchToProps,
 // )(injectSheet(styles)(YourComponent));
 
-export default injectSheet(styles)(Bookmark);
+export default injectSheet(styles)(BookmarkLink);

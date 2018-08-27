@@ -23,4 +23,4 @@ export interface IBookmarkSingle {
   data: string | IBookmarkSingle[];
 }
 
-export interface IProps extends IStateToProps, IStyle, IBookmarksProps {}
+export interface IProps extends IStateToProps, IDispatchToProps, IStyle, IBookmarksProps {}
