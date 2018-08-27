@@ -1,5 +1,12 @@
 var path = require("path");
 // var webpack = require("webpack");
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+// config.plugins = config.plugins.concat([
+//   new CopyWebpackPlugin([
+//     { from: 'client/assets', to: 'assets' }
+//   ]),
+// ...
+// ]);
 
 var config = {
   mode: 'development',
@@ -26,6 +33,11 @@ var config = {
     ]
   },
 
+  plugins: [
+    new CopyWebpackPlugin([
+      { from: 'assets', to: 'assets' }
+    ])
+  ]
 };
 
 module.exports = config;
