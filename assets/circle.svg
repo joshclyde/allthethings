@@ -1,0 +1,45 @@
+<svg width="320" 
+  height="320" 
+  xmlns="http://www.w3.org/2000/svg">
+  <!-- <path d="M10 315
+           L 110 215
+           A 30 50 0 0 1 162.55 162.45
+           L 172.55 152.45
+           A 30 50 -45 0 1 215.1 109.9
+           L 315 10" stroke="black" fill="green" stroke-width="2" fill-opacity="0.5"/> -->
+
+  <path d="M4 1
+           A 1,1 0,0,1 2,1" 
+    stroke="black" 
+    fill="none" 
+    stroke-width="1"/>
+  <path d="M25 175
+           A 25 25 0 0 1 0 150" 
+    stroke="blue" 
+    fill="none" 
+    stroke-width="2"/>
+  <path d="M0 150
+           A 25 25 0 0 1 25 125" 
+    stroke="green" 
+    fill="none" 
+    stroke-width="2"/>
+  <path d="M25 125
+           A 25 25 0 0 1 50 150" 
+    stroke="red" 
+    fill="none" 
+    stroke-width="2"/>
+  <path d="M50 150
+           A 25 25 0 0 1 25 175" 
+    stroke="black" 
+    fill="none" 
+    stroke-width="2"/>
+</svg>
+
+<!-- <svg xmlns="http://www.w3.org/2000/svg" width="180mm" height="40mm" viewBox="0 0 18 2" version="1.1">
+
+
+    <path d="M4 1
+           A 1,1 0,0,1 2,1" stroke="black" fill="none" stroke-width="1"/>
+</svg>
+
+ -->

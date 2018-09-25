@@ -1,7 +1,7 @@
 import * as React from "react";
 // @ts-ignore: don't have a types file for jss
 import injectSheet from "react-jss";
-import { multiclass } from "../../../utils";
+import { multiclass } from "../../../../utils";
 import { IProps } from "./types";
 
 const TempoButton = ({ classes }: IProps) => (

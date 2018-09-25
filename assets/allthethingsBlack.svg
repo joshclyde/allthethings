@@ -1,0 +1,209 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+  width="360mm" 
+  height="40mm" 
+  viewBox="0 0 36 2" 
+  version="1.1">
+
+
+  <!-- <g transform="translate(12,0)">
+    <path d="M-1 1
+           A 1 1 0 0 1 0 0" transform="translate(1,.5)" stroke="black" fill="none" stroke-width="1"/>
+    <path d="M0 0
+           A 1 1 0 0 1 1 1" transform="translate(1,.5)" stroke="black" fill="none" stroke-width="1"/>
+    <path d="M1 1
+           A 1 1 0 0 1 0 2" transform="translate(1,.5)" stroke="black" fill="none" stroke-width="1"/>
+    <path d="M0 2
+           A 1 1 0 0 1 -1 1" transform="translate(1,.5)" stroke="black" fill="none" stroke-width="1"/>
+  </g> -->
+  <g id="a">
+    <circle cx="1.5" 
+      cy="1.5" 
+      r="1" 
+      stroke="black" 
+      stroke-width="1" 
+      fill="none" />
+    <line x1="2.5" 
+      y1="" 
+      x2="2.5" 
+      y2="3" 
+      stroke="black" 
+      stroke-width="1" />
+  </g>
+  <g id="l" 
+    transform="translate(3.75,0)">
+    <line x1="0" 
+      y1="-.75" 
+      x2="0" 
+      y2="3" 
+      stroke="black" 
+      stroke-width="1" />
+  </g>
+  <g id="l" 
+    transform="translate(5,0)">
+    <line x1="0" 
+      y1="-.75" 
+      x2="0" 
+      y2="3" 
+      stroke="black" 
+      stroke-width="1" />
+  </g>
+  <g id="t" 
+    transform="translate(6.25,0)">
+    <line x1="0" 
+      y1="-.75" 
+      x2="0" 
+      y2="1.51" 
+      stroke="black" 
+      stroke-width="1" />
+    <path d="M1 1
+           A 1 1 0 0 1 0 0" 
+      transform="translate(0,1.5)" 
+      stroke="black" 
+      fill="none" 
+      stroke-width="1"/>
+    <line x1="0" 
+      y1=".5" 
+      x2="1" 
+      y2=".5" 
+      stroke="black" 
+      stroke-width="1" />
+  </g>
+  <g id="h" 
+    transform="translate(8,0)">
+    <line x1="0" 
+      y1="-.75" 
+      x2="0" 
+      y2="3" 
+      stroke="black" 
+      stroke-width="1" />
+    <path d="M-1 1
+           A 1 1 0 0 1 0 0" 
+      transform="translate(1,.5)" 
+      stroke="black" 
+      fill="none" 
+      stroke-width="1"/>
+    <path d="M0 0
+           A 1 1 0 0 1 1 1" 
+      transform="translate(1,.5)" 
+      stroke="black" 
+      fill="none" 
+      stroke-width="1"/>
+    <line x1="2" 
+      y1="1.5" 
+      x2="2" 
+      y2="3" 
+      stroke="black" 
+      stroke-width="1" />
+  </g>
+  <g id="e" 
+    transform="translate(11.25,0)">
+    <path d="M-1 1
+           A 1 1 0 0 1 0 0" 
+      transform="translate(1,.5)" 
+      stroke="black" 
+      fill="none" 
+      stroke-width="1"/>
+    <path d="M0 0
+           A 1 1 0 0 1 1 1" 
+      transform="translate(1,.5)" 
+      stroke="black" 
+      fill="none" 
+      stroke-width="1"/>
+    <path d="M1 1
+           A 1 1 0 0 1 0 2" 
+      transform="translate(1,.5)" 
+      stroke="black" 
+      fill="none" 
+      stroke-width="1"/>
+    <path d="M0 2
+           A 1 1 0 0 1 -1 1" 
+      transform="translate(1,.5)" 
+      stroke="black" 
+      fill="none" 
+      stroke-width="1"/>
+    <line x1="0.5" 
+      y1="2" 
+      x2="1.5" 
+      y2="2" 
+      stroke="black" 
+      stroke-width="1" />
+  </g>
+  <g id="t" 
+    transform="translate(14.5,0)">
+    <line x1="0" 
+      y1="-.75" 
+      x2="0" 
+      y2="1.51" 
+      stroke="black" 
+      stroke-width="1" />
+    <path d="M1 1
+           A 1 1 0 0 1 0 0" 
+      transform="translate(0,1.5)" 
+      stroke="black" 
+      fill="none" 
+      stroke-width="1"/>
+    <line x1="0" 
+      y1=".5" 
+      x2="1" 
+      y2=".5" 
+      stroke="black" 
+      stroke-width="1" />
+  </g>
+  <g id="h" 
+    transform="translate(16.25,0)">
+    <line x1="0" 
+      y1="-.75" 
+      x2="0" 
+      y2="3" 
+      stroke="black" 
+      stroke-width="1" />
+    <path d="M-1 1
+           A 1 1 0 0 1 0 0" 
+      transform="translate(1,.5)" 
+      stroke="black" 
+      fill="none" 
+      stroke-width="1"/>
+    <path d="M0 0
+           A 1 1 0 0 1 1 1" 
+      transform="translate(1,.5)" 
+      stroke="black" 
+      fill="none" 
+      stroke-width="1"/>
+    <line x1="2" 
+      y1="1.5" 
+      x2="2" 
+      y2="3" 
+      stroke="black" 
+      stroke-width="1" />
+  </g>
+  <g id="i" 
+    transform="translate(19.5,0)">
+    <line x1="0" 
+      y1="" 
+      x2="0" 
+      y2="3" 
+      stroke="black" 
+      stroke-width="1" />
+  </g>
+  <g id="n" 
+    transform="translate(21,0)">
+    <line x1="0" 
+      y1="" 
+      x2="0" 
+      y2="3" 
+      stroke="black" 
+      stroke-width="1" />
+    <line x1="2" 
+      y1="" 
+      x2="2" 
+      y2="3" 
+      stroke="black" 
+      stroke-width="1" />
+    <line x1="0" 
+      y1=".5" 
+      x2="2" 
+      y2="2.5" 
+      stroke="black" 
+      stroke-width="1" />
+  </g>
+</svg>

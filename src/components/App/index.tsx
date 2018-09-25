@@ -3,12 +3,14 @@ import { Provider } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import { combineReducers, createStore } from "redux";
 
-import Bookmarks, { reducers as bookmarksReducers } from "../Bookmarks";
+import { reducers as allReducers } from "../../redux";
+import { setSize } from "../../redux/ui/actions";
+import Bookmarks from "../Bookmarks";
 import TileGrid from "../TileGrid";
 import { reducers as practiceReducers } from "../UkulelePractice";
 
 const reducers = combineReducers({
-  ...bookmarksReducers,
+  ...allReducers,
   ...practiceReducers,
 });
 
@@ -20,7 +22,9 @@ const store = createStore(
   (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__(),
 );
 
-// const PracticeComponent = <UkulelePractice />;
+window.addEventListener("resize", () => {
+  store.dispatch(setSize(window.innerWidth, window.innerHeight));
+});
 
 const RouteTileGrid = () => <TileGrid width={window.innerWidth} height={window.innerHeight} />;
 const RouteBookmarks = () => <Bookmarks nothing="" />;

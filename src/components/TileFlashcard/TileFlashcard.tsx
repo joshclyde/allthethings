@@ -5,7 +5,7 @@ import injectSheet from "react-jss";
 import Categories from "./Categories";
 import { IProps } from "./types";
 
-import { multiclass } from "../utils";
+import { multiclass } from "../../utils";
 
 const TileFlashcard = ({ classes }: IProps) => (
   <div className={multiclass(classes.partialScreen, classes.wholeDiv)}>

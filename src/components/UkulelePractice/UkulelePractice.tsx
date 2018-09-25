@@ -3,7 +3,7 @@ import * as React from "react";
 import injectSheet from "react-jss";
 import { connect, Dispatch } from "react-redux";
 
-import { multiclass } from "../utils";
+import { multiclass } from "../../utils";
 import Chord from "./Chord";
 import { randomChord } from "./Chord/utils";
 import Metronome from "./Metronome";

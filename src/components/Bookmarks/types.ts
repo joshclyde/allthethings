@@ -1,10 +1,12 @@
+import { IBookmarkData } from "../../redux/bookmarks/types";
+
 export interface IStateToProps {
-  bookmarkData: IBookmarkSingle[];
-  bookmarkId: number;
+  bookmarkFolders: IBookmarkData[];
+  currentBookmarks: IBookmarkData[];
 }
 
 export interface IDispatchToProps {
-  onChangeBookmarkId(bookmarkId: number): void;
+  onSetBookmarkId(bookmarkId: number): void;
 }
 
 export interface IStyle {
@@ -15,12 +17,6 @@ export interface IStyle {
 
 export interface IBookmarksProps {
   nothing: string;
-}
-
-export interface IBookmarkSingle {
-  id?: number;
-  name: string;
-  data: string | IBookmarkSingle[];
 }
 
 export interface IProps extends IStateToProps, IDispatchToProps, IStyle, IBookmarksProps {}
