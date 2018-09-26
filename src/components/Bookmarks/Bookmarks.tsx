@@ -3,9 +3,9 @@ import * as React from "react";
 import injectSheet from "react-jss";
 import { connect, Dispatch } from "react-redux";
 
-import { setBookmarkId } from "../../redux/bookmarks/actions";
-import { selectors } from "../../redux/bookmarks/selectors";
-import { IState } from "../../redux/bookmarks/types";
+import { setBookmarkId } from "@redux/bookmarks/actions";
+import { selectors } from "@redux/bookmarks/selectors";
+import { IState } from "@redux/bookmarks/types";
 
 import BookmarkBar from "./BookmarkBar";
 import BookmarkGrid from "./BookmarkGrid";

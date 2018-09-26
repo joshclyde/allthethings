@@ -1,4 +1,4 @@
-import { IBookmarkData } from "../../redux/bookmarks/types";
+import { IBookmarkData } from "@redux/bookmarks/types";
 
 export interface IStateToProps {
   bookmarkFolders: IBookmarkData[];

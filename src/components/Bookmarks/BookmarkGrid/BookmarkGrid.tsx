@@ -1,11 +1,11 @@
 import * as React from "react";
 // @ts-ignore: don't have a types file for jss
 import injectSheet from "react-jss";
-import { IBookmarkData } from "../../../redux/bookmarks/types";
+
+import { IBookmarkData } from "@redux/bookmarks/types";
 
 import BookmarkFolder from "./BookmarkFolder";
 import BookmarkLink from "./BookmarkLink";
-
 import { IBookmarkGridProps, IProps } from "./types";
 
 // could be empty string

@@ -1,6 +1,7 @@
 var path = require("path");
 // var webpack = require("webpack");
 var CopyWebpackPlugin = require("copy-webpack-plugin");
+var { TsConfigPathsPlugin } = require("awesome-typescript-loader");
 // config.plugins = config.plugins.concat([
 //   new CopyWebpackPlugin([
 //     { from: 'client/assets', to: 'assets' }
@@ -17,6 +18,7 @@ var config = {
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
+    plugins: [ new TsConfigPathsPlugin() ],
   },
   devServer: {
     contentBase: [path.join(__dirname, "public"), path.join(__dirname, "build")],
@@ -33,7 +35,9 @@ var config = {
     ],
   },
 
-  plugins: [new CopyWebpackPlugin([{ from: "assets", to: "assets" }])],
+  plugins: [
+    new CopyWebpackPlugin([{ from: "assets", to: "assets" }]),
+  ],
 };
 
 module.exports = config;

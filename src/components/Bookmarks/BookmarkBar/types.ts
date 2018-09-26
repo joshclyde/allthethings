@@ -1,4 +1,4 @@
-import { IBookmarkData } from "../../../redux/bookmarks/types";
+import { IBookmarkData } from "@redux/bookmarks/types";
 import { IDispatchToProps } from "../types";
 
 export interface IStyle {

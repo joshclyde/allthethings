@@ -3,8 +3,8 @@ import { Provider } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import { combineReducers, createStore } from "redux";
 
-import { reducers as allReducers } from "../../redux";
-import { setSize } from "../../redux/ui/actions";
+import { reducers as allReducers } from "@redux/index";
+import { setSize } from "@redux/ui/actions";
 import Bookmarks from "../Bookmarks";
 import TileGrid from "../TileGrid";
 import { reducers as practiceReducers } from "../UkulelePractice";
