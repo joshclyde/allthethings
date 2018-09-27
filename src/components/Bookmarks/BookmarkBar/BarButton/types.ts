@@ -1,3 +1,5 @@
+import { IClickablePropsInjected } from "@hocs/withClickable";
+
 export interface IStyle {
   classes: {
     whole: string;
@@ -6,7 +8,7 @@ export interface IStyle {
   };
 }
 
-export interface IBarButtonProps {
+export interface IBarButtonProps extends IClickablePropsInjected {
   text: string;
   onClick(): void;
 }

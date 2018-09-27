@@ -11,7 +11,8 @@
     "baseUrl": ".",
     "paths": {
       "@redux/*": ["src/redux/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@hocs/*": ["src/hocs/*"]
     }
   },
   "include": [
