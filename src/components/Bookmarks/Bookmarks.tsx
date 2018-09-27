@@ -14,10 +14,7 @@ import { IBookmarksProps, IDispatchToProps, IProps, IStateToProps } from "./type
 
 const Bookmarks = ({ classes, bookmarkFolders, currentBookmarks, onSetBookmarkId }: IProps) => (
   <div className={classes.wholeDiv}>
-    <BookmarkBar
-      bookmarkFolders={bookmarkFolders}
-      onSetBookmarkId={onSetBookmarkId}
-    />
+    <BookmarkBar bookmarkFolders={bookmarkFolders} onSetBookmarkId={onSetBookmarkId} />
     <BookmarkGrid currentBookmarks={currentBookmarks} onSetBookmarkId={onSetBookmarkId} />
   </div>
 );
