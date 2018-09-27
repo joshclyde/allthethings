@@ -10,7 +10,8 @@
     "jsx": "react",
     "baseUrl": ".",
     "paths": {
-      "@redux/*": ["src/redux/*"]
+      "@redux/*": ["src/redux/*"],
+      "@utils/*": ["src/utils/*"]
     }
   },
   "include": [

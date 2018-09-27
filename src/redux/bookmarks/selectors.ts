@@ -1,4 +1,5 @@
-import { IBookmarkState, IState } from "./types";
+import { IState } from "../types";
+import { IBookmarkState } from "./types";
 
 // const recusrion = (bookmarkIds: IBookmarkSingle[], id: number): IBookmarkSingle => {
 //   const newArray = bookmarkIds.filter((bookmark) => Array.isArray(bookmark.data));

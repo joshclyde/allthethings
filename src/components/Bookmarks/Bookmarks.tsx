@@ -4,8 +4,9 @@ import injectSheet from "react-jss";
 import { connect, Dispatch } from "react-redux";
 
 import { setBookmarkId } from "@redux/bookmarks/actions";
-import { selectors } from "@redux/bookmarks/selectors";
-import { IState } from "@redux/bookmarks/types";
+import { selectors as bookmarkSelectors } from "@redux/bookmarks/selectors";
+import { IState } from "@redux/types";
+import { selectors as uiSelectors } from "@redux/ui/selectors";
 
 import BookmarkBar from "./BookmarkBar";
 import BookmarkGrid from "./BookmarkGrid";
@@ -13,20 +14,29 @@ import { IBookmarksProps, IDispatchToProps, IProps, IStateToProps } from "./type
 
 const Bookmarks = ({ classes, bookmarkFolders, currentBookmarks, onSetBookmarkId }: IProps) => (
   <div className={classes.wholeDiv}>
-    <BookmarkBar bookmarkFolders={bookmarkFolders} onSetBookmarkId={onSetBookmarkId} />
+    <BookmarkBar
+      bookmarkFolders={bookmarkFolders}
+      onSetBookmarkId={onSetBookmarkId}
+    />
     <BookmarkGrid currentBookmarks={currentBookmarks} onSetBookmarkId={onSetBookmarkId} />
   </div>
 );
 
 const styles = {
-  wholeDiv: {
-    textAlign: "center",
+  wholeDiv: ({ uiWidth }: IProps) => {
+    return {
+      margin: "0 auto",
+      width: Math.min(uiWidth, 1080),
+      // textAlign: "center",
+      // justifyContent: "center",
+    };
   },
 };
 
 const mapStateToProps = (state: IState): IStateToProps => ({
-  bookmarkFolders: selectors.getBookmarkFolders(state),
-  currentBookmarks: selectors.getCurrentBookmarks(state),
+  bookmarkFolders: bookmarkSelectors.getBookmarkFolders(state),
+  currentBookmarks: bookmarkSelectors.getCurrentBookmarks(state),
+  uiWidth: uiSelectors.getWidth(state),
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): IDispatchToProps => ({

@@ -10,6 +10,7 @@ export interface IStyle {
 export interface IBookmarkBarProps {
   bookmarkFolders: IBookmarkData[];
   onSetBookmarkId: IDispatchToProps["onSetBookmarkId"];
+  overrideClassName?: string;
 }
 
 export interface IProps extends IStyle, IBookmarkBarProps {}

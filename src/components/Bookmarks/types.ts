@@ -3,6 +3,7 @@ import { IBookmarkData } from "@redux/bookmarks/types";
 export interface IStateToProps {
   bookmarkFolders: IBookmarkData[];
   currentBookmarks: IBookmarkData[];
+  uiWidth: number;
 }
 
 export interface IDispatchToProps {

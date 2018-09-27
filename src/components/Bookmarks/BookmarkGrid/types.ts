@@ -8,6 +8,7 @@ export interface IStyle {
 
 export interface IBookmarkGridProps {
   currentBookmarks: IBookmarkData[];
+  overrideClassName?: string;
   onSetBookmarkId(bookmarkId: number): void;
 }
 

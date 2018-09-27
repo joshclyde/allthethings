@@ -8,6 +8,7 @@
     "jsx-key": false,
     "no-any": true,
     "jsx-no-lambda": false,
-    "no-empty-interface": false
+    "no-empty-interface": false,
+    "member-access": false
   }
 }

@@ -3,10 +3,6 @@ export interface IUiState {
   height: number;
 }
 
-export interface IState {
-  ui: IUiState;
-}
-
 export interface IActions {
   type: string;
   width?: number;

@@ -10,11 +10,6 @@ export interface IBookmarkState {
   bookmarkIds: number[];
 }
 
-// selectors
-export interface IState {
-  bookmarks: IBookmarkState;
-}
-
 export interface IActions {
   type: string;
   bookmarkId: number;

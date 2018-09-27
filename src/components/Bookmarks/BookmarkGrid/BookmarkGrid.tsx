@@ -3,6 +3,7 @@ import * as React from "react";
 import injectSheet from "react-jss";
 
 import { IBookmarkData } from "@redux/bookmarks/types";
+import multiclass from "@utils/mutliclass";
 
 import BookmarkFolder from "./BookmarkFolder";
 import BookmarkLink from "./BookmarkLink";
@@ -11,8 +12,8 @@ import { IBookmarkGridProps, IProps } from "./types";
 // could be empty string
 const isFolder = (bookmark: IBookmarkData) => !bookmark.data;
 
-const BookmarkGrid = ({ classes, currentBookmarks, onSetBookmarkId }: IProps) => (
-  <div className={classes.wholeDiv}>
+const BookmarkGrid = ({ classes, overrideClassName, currentBookmarks, onSetBookmarkId }: IProps) => (
+  <div className={multiclass(classes.wholeDiv, overrideClassName)}>
     {currentBookmarks.map(
       (bookmark: IBookmarkData) =>
         isFolder(bookmark) ? (

@@ -22,7 +22,7 @@ class Metronome extends React.Component<IProps, {}> {
     prevBeat = beat;
   }
 
-  public componentDidUpdate() {
+  componentDidUpdate() {
     const { tick, onBeat, bpm, beat, timeNumerator } = this.props;
     if (beat !== prevBeat) {
       if (beat + 1 === timeNumerator) {
@@ -39,7 +39,7 @@ class Metronome extends React.Component<IProps, {}> {
     }
   }
 
-  public render() {
+  render() {
     const { classes, beat, bpm, onClickDown, onClickUp, onClickUpUp, onClickDownDown } = this.props;
     // const showLength = 400;
     // const opacity = Math.sqrt(Math.max((showLength - (currentTick - previousTick)) / showLength, 0));
