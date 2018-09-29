@@ -3,6 +3,7 @@ import { IBookmarkData } from "@redux/bookmarks/types";
 export interface IStyle {
   classes: {
     wholeDiv: string;
+    buttonDiv: string;
   };
 }
 

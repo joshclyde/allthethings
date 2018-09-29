@@ -15,21 +15,19 @@ const BookmarkBar = ({ classes, overrideClassName, bookmarkFolders, onSetBookmar
 
 const styles = {
   wholeDiv: {
-    // margin: 8,
     height: 40,
-    padding: 4,
 
     boxSizing: "border-box",
     borderStyle: "solid",
     borderWidth: 2,
-    borderColor: "black",
+    borderColor: "lightgrey",
     borderRadius: 8,
 
     display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "flex-start",
-    alignItems: "flex-start",
+    alignItems: "stretch",
     alignContent: "flex-start",
   },
 };

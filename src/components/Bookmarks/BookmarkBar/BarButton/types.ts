@@ -10,7 +10,6 @@ export interface IStyle {
 
 export interface IBarButtonProps extends IClickablePropsInjected {
   text: string;
-  onClick(): void;
 }
 
 export interface IProps extends IStyle, IBarButtonProps {}

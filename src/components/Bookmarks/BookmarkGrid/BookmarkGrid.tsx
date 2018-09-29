@@ -5,28 +5,35 @@ import injectSheet from "react-jss";
 import { IBookmarkData } from "@redux/bookmarks/types";
 import multiclass from "@utils/mutliclass";
 
-import BookmarkFolder from "./BookmarkFolder";
-import BookmarkLink from "./BookmarkLink";
+import BookmarkButton from "./BookmarkButton";
 import { IBookmarkGridProps, IProps } from "./types";
-
-// could be empty string
-const isFolder = (bookmark: IBookmarkData) => !bookmark.data;
 
 const BookmarkGrid = ({ classes, overrideClassName, currentBookmarks, onSetBookmarkId }: IProps) => (
   <div className={multiclass(classes.wholeDiv, overrideClassName)}>
-    {currentBookmarks.map(
-      (bookmark: IBookmarkData) =>
-        isFolder(bookmark) ? (
-          <BookmarkFolder bookmark={bookmark} onSetBookmarkId={onSetBookmarkId} />
-        ) : (
-          <BookmarkLink bookmark={bookmark} />
-        ),
-    )}
+    {currentBookmarks.map((bookmark: IBookmarkData) => (
+      <BookmarkButton bookmark={bookmark} url={bookmark.data} onClick={() => onSetBookmarkId(bookmark.id)} />
+    ))}
   </div>
 );
 
 const styles = {
-  wholeDiv: {},
+  wholeDiv: {
+    height: "100%",
+
+    boxSizing: "border-box",
+    borderStyle: "solid",
+    borderWidth: 2,
+    borderColor: "lightgrey",
+    borderRadius: 8,
+
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    alignContent: "flex-start",
+  },
+  buttonDiv: {},
 };
 
 export default injectSheet(styles)(BookmarkGrid) as React.SFC<IBookmarkGridProps>;
