@@ -1,0 +1,27 @@
+if not registered user, needs to redirect to spotify/auth page
+this gives us the authorization code which can be exchanged for an access token
+
+Once we have the authorization code, we shouldn't ever need to call spotify/auth ever again.
+Instead we will call spotify/token. This will return us
+{
+   "access_token": "NgCXRK...MzYjw",
+   "token_type": "Bearer",
+   "scope": "user-read-private user-read-email",
+   "expires_in": 3600,
+   "refresh_token": "NgAagA...Um_SHo"
+}
+The access token is temporary and is used to make calls to get real data.
+The refresh token is important! We use this to get a new access token once it expires.
+
+Access Token Expired
+{
+  "error": {
+    "status": 401,
+    "message": "The access token expired"
+  }
+}
+
+
+
+
+NOTE: it looks like the auth code expires? so might want to look into that.

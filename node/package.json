@@ -1,0 +1,41 @@
+{
+  "name": "bff-allthethings",
+  "version": "0.0.0",
+  "description": "bff for allthethings",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/index.ts",
+    "lint": "./node_modules/.bin/tslint -p tsconfig.json \"src/**/*.ts\"",
+    "precommit": "npm run prettier:diff && npm run lint",
+    "prettier:write": "./node_modules/.bin/prettier --write \"src/**/*.ts\"",
+    "prettier:diff": "./node_modules/.bin/prettier --list-different \"src/**/*.ts\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshclyde/bff-allthethings.git"
+  },
+  "author": "Josh Clyde",
+  "license": "ISC",
+  "dependencies": {
+    "@types/axios": "0.14.0",
+    "@types/koa": "2.0.46",
+    "@types/koa-bodyparser": "5.0.1",
+    "@types/koa-router": "7.0.30",
+    "@types/mongodb": "3.1.10",
+    "@types/mongoose": "5.2.18",
+    "axios": "0.18.0",
+    "koa": "2.5.2",
+    "koa-bodyparser": "4.2.1",
+    "koa-router": "7.4.0",
+    "mongodb": "3.1.6",
+    "mongoose": "5.3.1"
+  },
+  "devDependencies": {
+    "husky": "0.14.3",
+    "nodemon": "1.18.2",
+    "prettier": "1.13.7",
+    "ts-node": "7.0.0",
+    "tslint": "5.10.0",
+    "typescript": "2.9.2"
+  }
+}

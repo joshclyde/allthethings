@@ -1,0 +1,11 @@
+{
+  "extends": ["tslint:recommended"],
+  "rules": {
+    "no-unused-variable": true,
+    "max-line-length": [true, 120],
+    "object-literal-sort-keys": false,
+    "no-any": true,
+    "quotemark": [true, "double"],
+    "no-console": false
+  }
+}
