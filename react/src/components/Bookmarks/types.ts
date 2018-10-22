@@ -8,6 +8,7 @@ export interface IStateToProps {
 
 export interface IDispatchToProps {
   onSetBookmarkId(bookmarkId: number): void;
+  onFetchBookamrks(): void;
 }
 
 export interface IStyle {

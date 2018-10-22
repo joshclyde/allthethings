@@ -11,6 +11,7 @@ router.get("/", async (ctx, next) => {
   const bookmarks = await getBookmarks();
   ctx.response.status = bookmarks ? 200 : 500;
   ctx.response.body = bookmarks ? bookmarks : "Oopsies! Something went wrong.";
+  ctx.set("Access-Control-Allow-Origin", "http://localhost:8080");
   await next();
 });
 

@@ -3,6 +3,7 @@ import * as React from "react";
 // @ts-ignore: don't have a types file for jss
 import injectSheet from "react-jss";
 import { Subtract } from "utility-types";
+import addHttp from "../components/Bookmarks/utils/addHttp";
 
 export interface IClickablePropsInjected {
   isHovering: boolean;
@@ -47,7 +48,7 @@ const withClickable = <P extends IClickablePropsInjected>(WrappedComponent: Reac
         <a
           onMouseOver={this.handleOnMouseOver}
           onMouseOut={this.handleOnMouseOut}
-          href={url}
+          href={addHttp(url)}
           style={{ cursor: "pointer" }}
         >
           <WrappedComponent {...restOfProps} isHovering={isHovering} />

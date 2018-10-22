@@ -1,3 +1,9 @@
+export interface IFetching {
+  isFetching: boolean;
+  isSuccess: boolean;
+  isFailure: boolean;
+}
+
 export interface IBookmarkData {
   id: number;
   folderId?: number;
@@ -8,9 +14,11 @@ export interface IBookmarkData {
 export interface IBookmarkState {
   bookmarkData: IBookmarkData[];
   bookmarkIds: number[];
+  fetching: IFetching;
 }
 
 export interface IActions {
   type: string;
-  bookmarkId: number;
+  bookmarkId?: number;
+  bookmarkData?: IBookmarkData[];
 }
